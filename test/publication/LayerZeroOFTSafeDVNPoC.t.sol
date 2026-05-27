@@ -498,18 +498,6 @@ contract LayerZeroOFTSafeDVNPoC {
         );
     }
 
-    function test_lombard_lbtcoftadapter_d95299() public {
-        _run(
-            Case({
-                name: "Lombard LBTCOFTAdapter",
-                adapter: address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299)),
-                owner: address(uint160(0x00251a604e8e8f6906d60f8dedc5aaeb8cd38f4892)),
-                token: address(uint160(0x008236a87084f8b84306f72007f36f2618a5634494)),
-                useDecimalConversionRate: true
-            })
-        );
-    }
-
     function test_resolv_usroftadapter_d4be0e() public {
         _run(
             Case({
@@ -624,7 +612,6 @@ contract LayerZeroOFTSafeDVNPoC {
         if (
             adapter == address(uint160(0x00cd2eb13d6831d4602d80e5db9230a57596cdca63))
                 || adapter == address(uint160(0x00acb11bc20b1945e59976e3307d2a805faa126c31))
-                || adapter == address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299))
         ) {
             return 30106;
         }
@@ -655,7 +642,6 @@ contract LayerZeroOFTSafeDVNPoC {
         }
         if (
             c.adapter == address(uint160(0x00acb11bc20b1945e59976e3307d2a805faa126c31))
-                || c.adapter == address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299))
         ) {
             ILombardRateLimits.RateLimit[] memory limits = new ILombardRateLimits.RateLimit[](1);
             limits[0] = ILombardRateLimits.RateLimit({

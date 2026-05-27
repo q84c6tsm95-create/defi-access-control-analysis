@@ -18,7 +18,7 @@ Current executable harnesses:
 - `LayerZeroOFTSafeDVNPoC.t.sol`: owner/delegate sets the owner Safe as the
   required LayerZero V2 DVN, installs an attacker peer, verifies and commits the
   packet through `ReceiveUln302`, and executes `endpoint.lzReceive`. Current
-  passing coverage: 36 OFT / OFT-adapter cases with local token metadata.
+  passing coverage: 35 OFT / OFT-adapter cases with local token metadata.
 
 The generated `poc/` folders remain the row-level publication evidence index.
 Additional Foundry tests should be added here only after the exact sender,

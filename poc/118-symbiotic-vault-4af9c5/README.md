@@ -5,7 +5,7 @@
 - Protocol: `Symbiotic`
 - Contract name: `Vault`
 - Contract: [0x4e0554959a631b3d3938ffc158e0a7b2124af9c5](https://etherscan.io/address/0x4e0554959a631b3d3938ffc158e0a7b2124af9c5)
-- Role: `DEFAULT_ADMIN_ROLE`
+- Role: `OWNER`
 - Authority holder: [0x8989e3f949df80e8efcbf3372f082699b93e5c09](https://etherscan.io/address/0x8989e3f949df80e8efcbf3372f082699b93e5c09)
 - Control class: `2/3`
 - Nested Safe: `❌`

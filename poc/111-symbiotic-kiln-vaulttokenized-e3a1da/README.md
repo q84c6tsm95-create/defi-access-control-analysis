@@ -5,7 +5,7 @@
 - Protocol: `Symbiotic / Kiln`
 - Contract name: `VaultTokenized`
 - Contract: [0xc10a7f0ac6e3944f4860ee97a937c51572e3a1da](https://etherscan.io/address/0xc10a7f0ac6e3944f4860ee97a937c51572e3a1da)
-- Role: `DEFAULT_ADMIN_ROLE`
+- Role: `OWNER`
 - Authority holder: [0x059ae3f8a1eaddaab34d0a74e8eb752c848062d1](https://etherscan.io/address/0x059ae3f8a1eaddaab34d0a74e8eb752c848062d1)
 - Control class: `3/7`
 - Nested Safe: `❌`

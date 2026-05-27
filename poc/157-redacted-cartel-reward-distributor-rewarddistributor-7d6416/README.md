@@ -10,7 +10,7 @@
 - Control class: `3/7`
 - Nested Safe: `❌`
 - Funds moved in proof: `$546.4K`
-- Execution class: `Multi-tx`
+- Execution class: `Delayed`
 
 ## Authority Path
 

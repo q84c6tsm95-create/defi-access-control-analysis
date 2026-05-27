@@ -4,12 +4,12 @@
 
 - Protocol: `Symbiotic / Kiln`
 - Contract name: `VaultTokenized`
-- Contract: [0xc10a7f0ac6e3944f4860ee97a937c51572e3a1da](https://etherscan.io/address/0xc10a7f0ac6e3944f4860ee97a937c51572e3a1da)
-- Role: `OWNER`
+- Contract: [0xaf07131c497e06361dc2f75de63dc1d3e113f7cb](https://etherscan.io/address/0xaf07131c497e06361dc2f75de63dc1d3e113f7cb)
+- Role: `DEFAULT_ADMIN_ROLE`
 - Authority holder: [0x059ae3f8a1eaddaab34d0a74e8eb752c848062d1](https://etherscan.io/address/0x059ae3f8a1eaddaab34d0a74e8eb752c848062d1)
 - Control class: `3/7`
 - Nested Safe: `❌`
-- Funds moved in proof: `$1.3M`
+- Funds moved in proof: `$934.5K`
 - Execution class: `Multi-tx`
 
 ## Authority Path

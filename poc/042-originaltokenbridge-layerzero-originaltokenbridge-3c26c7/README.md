@@ -10,7 +10,7 @@
 - Control class: `2/3`
 - Nested Safe: `❌`
 - Funds moved in proof: `$15.1M`
-- Execution class: `Multi-tx`
+- Execution class: `Atomic`
 
 ## Authority Path
 
