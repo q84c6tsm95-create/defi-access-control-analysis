@@ -1,12 +1,11 @@
 # Ethereum Access Control Risk Report
 
-This report identifies Ethereum contracts where externally controlled authority over assets or critical protocol controls remains active. Compromise of the listed EOA, Safe, or control contract could lead to loss of funds.
+This report documents Ethereum contracts where an EOA, Safe, or externally controlled contract still holds authority over assets or critical protocol controls. The listed paths show where compromise of that authority could be used to move funds, alter upgrade or bridge trust assumptions, mint or withdraw assets, or otherwise create a loss-of-funds scenario.
 
 ## Methodology
 
 - Starting universe: `bigquery-public-data.crypto_ethereum.contracts` contained **99,515,714** unique Ethereum contract addresses across **100,028,511** creation records when checked for this draft.
 - Authority candidates: `bigquery-public-data.crypto_ethereum.logs` was scanned for tracked ownership and access-control events, producing a local merged candidate set of **1,348,790** unique contracts.
-- Rollup upgrade pass: L2BEAT discovery metadata was parsed for Ethereum upgrade permissions held by EOAs, Safes, security councils, and their ProxyAdmin/executor paths. Rows from this pass are included only when a local fork PoC moved value through the documented upgrade path.
 - Patterns covered: `Ownable / Ownable2Step`, `owner()` holders, `OpenZeppelin AccessControl` grants and admin hierarchies, `ProxyAdmin` ownership, `EIP-1967` and `Transparent proxy` admins, `UUPS` upgrade authority, `Beacon` / beacon-proxy upgrade authority, and L2BEAT-reported rollup bridge / portal upgrade permissions. Privileged holders were classified as EOAs, Safes, or contracts.
 - PoC evidence: every publication row has local fork execution evidence for the documented value-moving path. `Execution class` separates single-transaction paths from multi-transaction or delayed sequences.
 - Safe nesting: the `Nested Safe` column is populated from local reth `getOwners()` and `getThreshold()` calls. `✅ (n/m, n1/m1)` means one or more top-level Safe owners are themselves Safes with the listed thresholds; `❌` means no nested Safe owner was found.
@@ -17,7 +16,6 @@ This report identifies Ethereum contracts where externally controlled authority 
 - Protocol labels were refreshed against public labels and verified-source evidence where available; unlabeled or generic names should be treated as best-effort attribution.
 - EOA classification is based on on-chain bytecode absence. The sweep cannot determine whether an EOA is operated by a single signer, hardware wallet, or off-chain MPC custody setup.
 - Candidate coverage is based on the tracked authority patterns listed above; contracts using custom ownership, bespoke role systems, unindexed factory metadata, or authority hidden behind non-standard storage/events may be missing from this draft.
-- L2BEAT upgrade rows cover direct value movement from Ethereum contracts verified on a local fork. Executor/governance paths that did not yet have a complete local-fork transaction chain remain under investigation.
 
 ## Value at risk by control class
 
