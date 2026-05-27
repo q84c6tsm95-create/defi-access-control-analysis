@@ -32,3 +32,6 @@ custom UsdtOFT message format confirmed: setPeer(30110, attacker peer) followed 
 
 This folder is generated from the current publication data and local-fork simulation cache.
 
+Foundry harness: [`test/publication/LayerZeroOFTSafeDVNPoC.t.sol`](../../test/publication/LayerZeroOFTSafeDVNPoC.t.sol).
+
+Run with `RETH_RPC=http://127.0.0.1:8545 forge test --match-path 'test/publication/LayerZeroOFTSafeDVNPoC.t.sol' -vv`.
