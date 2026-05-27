@@ -15,6 +15,11 @@ Current executable harnesses:
 - `EthenaStakedUSDeV2PoC.t.sol`: admin Safe grants `FULL_RESTRICTED_STAKER_ROLE`,
   redistributes a restricted holder's sUSDe shares, sets cooldown to zero, and
   redeems USDe to the controlled recipient.
+- `LayerZeroOFTSafeDVNPoC.t.sol`: owner/delegate sets the owner Safe as the
+  required LayerZero V2 DVN, installs an attacker peer, verifies and commits the
+  packet through `ReceiveUln302`, and executes `endpoint.lzReceive`. Current
+  passing cases: USDT0, Ethena USDe, Ethena sUSDe, Resolv USR, Swell rswETH,
+  and SAND.
 
 The generated `poc/` folders remain the row-level publication evidence index.
 Additional Foundry tests should be added here only after the exact sender,
