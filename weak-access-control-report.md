@@ -22,23 +22,16 @@ This report documents Ethereum contracts where an EOA, Safe, or externally contr
 | Control class | Contracts | Value |
 |---|---:|---:|
 | EOA | 22 | $273.8M |
-| Safe 2/3 | 13 | $97.3M |
-| Safe 2/4 | 6 | $15.1M |
-| Safe 3/4 | 4 | $27.0M |
-| Safe 3/5 | 27 | $4.00B |
-| Safe 2/2 | 12 | $2.62B |
-| Safe 4/7 | 7 | $303.2M |
-| Safe 3/6 | 4 | $236.0M |
-| Safe 4/6 | 10 | $97.7M |
-| Safe 3/7 | 5 | $42.0M |
-| Safe 3/3 | 2 | $32.1M |
-| Safe 5/7 | 2 | $24.6M |
-| Safe 5/8 | 4 | $21.7M |
-| Safe 6/8 | 1 | $8.1M |
-| Safe 4/8 | 4 | $5.5M |
-| Safe 1/1 | 2 | $2.0M |
-| Safe 3/8 | 2 | $1.3M |
-| Other scheme | 26 | $7.26B |
+| Safe 1/n | 2 | $2.0M |
+| Safe 2/n | 31 | $2.73B |
+| Safe 3/n | 44 | $4.34B |
+| Safe 4/n | 23 | $433.7M |
+| Safe 5/n | 17 | $6.70B |
+| Safe 6/n | 8 | $396.1M |
+| Safe 7/n | 2 | $7.5M |
+| Safe 8/n | 2 | $158.4M |
+| Safe 9/n | 1 | $17.8M |
+| Other scheme | 1 | $544.7K |
 | **Total** | **153** | **$15.06B** |
 
 ## Full authority table
