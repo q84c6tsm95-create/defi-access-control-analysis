@@ -30,4 +30,3 @@ Opyn Safe v1.1.1 (2/4 multisig) 0x638e5da0… is owner of both MarginPool and Ad
 
 This folder is generated from the current publication data and local-fork simulation cache.
 
-A standalone Foundry/Anvil harness has not been generated for this row yet. Add one only after the exact sender, target, calldata, and fork-state assumptions are reviewed.

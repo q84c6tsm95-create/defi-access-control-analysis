@@ -28,4 +28,3 @@ Drain confirmed via Symbiosis Portal ProxyAdmin upgrade. See docs/symbiosis_port
 
 This folder is generated from the current publication data and local-fork simulation cache.
 
-A standalone Foundry/Anvil harness has not been generated for this row yet. Add one only after the exact sender, target, calldata, and fork-state assumptions are reviewed.
