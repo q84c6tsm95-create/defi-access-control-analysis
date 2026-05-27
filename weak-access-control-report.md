@@ -1,6 +1,6 @@
 # Ethereum Access Control Risk Report
 
-Each row is a live Ethereum contract whose control over assets (owner, default-admin, proxy-upgrade, mint, or bridge-delegate authority) resolves to an externally controlled holder such as an EOA, Safe, or control contract. Compromise of the listed holder could lead to loss of funds.
+This report analyzes Ethereum contracts with ownership or privileged-control patterns where the controlling address is an EOA or Gnosis Safe. Compromise of the listed holder could lead to loss of funds.
 
 Row-level evidence folders are published in [`poc/`](./poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
 
