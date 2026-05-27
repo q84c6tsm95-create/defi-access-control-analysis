@@ -1,6 +1,6 @@
 # Ethereum Access Control Risk Report
 
-This report documents Ethereum contracts where an EOA, Safe, or externally controlled contract still holds authority over assets or critical protocol controls. The listed paths show where compromise of that authority could be used to move funds, alter upgrade or bridge trust assumptions, mint or withdraw assets, or otherwise create a loss-of-funds scenario.
+Each row is an Ethereum contract whose authority over user assets — or over the upgrade, mint, and bridge-trust logic that governs them — resolves to a single EOA key or a low-threshold Safe. One compromise of that authority (a single phishing or malware event against the holder) is sufficient to move the assets out. Every row carries the exact value-moving transaction path, executed against a current-mainnet fork.
 
 ## Methodology
 
@@ -17,9 +17,9 @@ This report documents Ethereum contracts where an EOA, Safe, or externally contr
 - EOA classification is based on on-chain bytecode absence. The sweep cannot determine whether an EOA is operated by a single signer, hardware wallet, or off-chain MPC custody setup.
 - Candidate coverage is based on the tracked authority patterns listed above; contracts using custom ownership, bespoke role systems, unindexed factory metadata, or authority hidden behind non-standard storage/events may be missing from this draft.
 
-## Value at risk by control class
+## Funds at risk by control class
 
-| Control class | Contracts | Value |
+| Control class | Contracts | Funds |
 |---|---:|---:|
 | EOA | 22 | $273.8M |
 | Safe 1/n | 2 | $2.0M |
@@ -28,10 +28,7 @@ This report documents Ethereum contracts where an EOA, Safe, or externally contr
 | Safe 4/n | 23 | $433.7M |
 | Safe 5/n | 17 | $6.70B |
 | Safe 6/n | 8 | $396.1M |
-| Safe 7/n | 2 | $7.5M |
-| Safe 8/n | 2 | $158.4M |
-| Safe 9/n | 1 | $17.8M |
-| Other scheme | 1 | $544.7K |
+| Other scheme | 6 | $184.2M |
 | **Total** | **153** | **$15.06B** |
 
 ## Full authority table
