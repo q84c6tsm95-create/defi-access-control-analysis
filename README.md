@@ -12,7 +12,7 @@ This report identifies Ethereum contracts where externally controlled authority 
 - PoC evidence: every publication row has Tenderly simulation evidence for the documented value-moving path. `Execution class` separates single-transaction paths from multi-transaction or delayed sequences.
 - Timing caveat: `Multi-tx` and `Delayed` rows are production-feasible authority paths, not same-block claims. Cross-chain rows require both an authority-controlled trust-root/router change and normal protocol message delivery.
 
-## Limitations
+## Known limitations
 
 - Protocol labels were refreshed against public labels and verified-source evidence where available; unlabeled or generic names should be treated as best-effort attribution.
 - EOA classification is based on on-chain bytecode absence. The sweep cannot determine whether an EOA is operated by a single signer, hardware wallet, or off-chain MPC custody setup.
@@ -33,7 +33,7 @@ This report identifies Ethereum contracts where externally controlled authority 
 | Safe 4/6 | 6 | $91.7M |
 | Safe 3/7 | 5 | $42.0M |
 | Safe 4/8 | 4 | $5.5M |
-| Other | 17 | $4.49B |
+| Other scheme | 17 | $4.49B |
 | **Total** | **107** | **$9.43B** |
 
 ## Full authority table
