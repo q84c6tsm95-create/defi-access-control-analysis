@@ -1,4 +1,6 @@
 *
 !README.md
 !weak-access-control-report.md
+!claims/
+!claims/**
 !.gitignore
