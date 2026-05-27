@@ -1,6 +1,10 @@
 *
 !README.md
 !weak-access-control-report.md
-!claims/
-!claims/**
+!foundry.toml
+!poc/
+!poc/**
+!test/
+!test/publication/
+!test/publication/**
 !.gitignore
