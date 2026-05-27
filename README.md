@@ -1,7 +1,5 @@
 # Ethereum Access Control Risk Report
 
-_Generated: 2026-05-27_
-
 This report identifies Ethereum contracts where externally controlled authority over assets or critical protocol controls remains active. Compromise of the listed EOA, Safe, or control contract could lead to loss of funds.
 
 ## Methodology
@@ -9,7 +7,7 @@ This report identifies Ethereum contracts where externally controlled authority 
 - Starting universe: `bigquery-public-data.crypto_ethereum.contracts` contained **99,515,714** unique Ethereum contract addresses across **100,028,511** creation records when checked for this draft.
 - Authority candidates: `bigquery-public-data.crypto_ethereum.logs` was scanned for tracked ownership and access-control events, producing a local merged candidate set of **1,348,790** unique contracts.
 - Patterns covered: `Ownable / Ownable2Step`, `owner()` holders, `OpenZeppelin AccessControl` grants and admin hierarchies, `ProxyAdmin` ownership, `EIP-1967` and `Transparent proxy` admins, `UUPS` upgrade authority, and `Beacon` / beacon-proxy upgrade authority. Privileged holders were classified as EOAs, Safes, or contracts.
-- PoC evidence: every publication row has Tenderly simulation evidence for the documented value-moving path. `Execution class` separates single-transaction paths from multi-transaction or delayed sequences.
+- PoC evidence: every publication row has local fork execution evidence for the documented value-moving path. `Execution class` separates single-transaction paths from multi-transaction or delayed sequences.
 - Timing caveat: `Multi-tx` and `Delayed` rows are production-feasible authority paths, not same-block claims. Cross-chain rows require both an authority-controlled trust-root/router change and normal protocol message delivery.
 
 ## Known limitations
@@ -17,7 +15,6 @@ This report identifies Ethereum contracts where externally controlled authority 
 - Protocol labels were refreshed against public labels and verified-source evidence where available; unlabeled or generic names should be treated as best-effort attribution.
 - EOA classification is based on on-chain bytecode absence. The sweep cannot determine whether an EOA is operated by a single signer, hardware wallet, or off-chain MPC custody setup.
 - Candidate coverage is based on the tracked authority patterns listed above; contracts using custom ownership, bespoke role systems, unindexed factory metadata, or authority hidden behind non-standard storage/events may be missing from this draft.
-- Bridge and rollup coverage is authority-path driven, not an inventory of every bridge on Ethereum. A bridge appears only when the sweep found a tracked EOA/Safe/externally controlled privileged path and the PoC review found a reachable asset, upgrade, trust-root, withdrawal, or liveness effect.
 
 ## Value at risk by control class
 
@@ -33,20 +30,22 @@ This report identifies Ethereum contracts where externally controlled authority 
 | Safe 4/6 | 6 | $91.7M |
 | Safe 3/7 | 5 | $42.0M |
 | Safe 4/8 | 4 | $5.5M |
-| Other scheme | 17 | $4.49B |
-| **Total** | **107** | **$9.43B** |
+| Other scheme | 19 | $6.69B |
+| **Total** | **109** | **$11.63B** |
 
 ## Full authority table
 
 | Protocol | Contract name | Money at risk | Contract | Role | Address | Control | Avg. txs/week | Execution class | Function path |
 |---|---|---:|---|---|---|---|---:|---|---|
 | USDT0 - LayerZero | OAdapterUpgradeable | $3.54B | [0x6c96...1dee](https://etherscan.io/address/0x6c96de32cea08842dcc4058c14d3aaad7fa41dee) | `OWNER` | [0x4dff...0bf8](https://etherscan.io/address/0x4dff9b5b0143e642a3f63a5bcf2d1c328e600bf8) | 3/5 | 2.13 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
+| Polygon | ERC20Predicate | $2.00B | [0x40ec...bbdf](https://etherscan.io/address/0x40ec5b33f54e0e8a33a975908c5ba1c14e5bbbdf) | `DEFAULT_ADMIN_ROLE` | [0xfa7d...b74c](https://etherscan.io/address/0xfa7d2a996ac6350f4b56c043112da0366a59b74c) | 5/9 | 0.77 | Multi-tx | <code>grantRole</code><br>→ <code>migrateTokens</code> |
 | Ethena | StakedUSDeV2 | $1.81B | [0x9d39...3497](https://etherscan.io/address/0x9d39a5de30e57443bff2a8307a4256c8797a3497) | `DEFAULT_ADMIN_ROLE` | [0x3b0a...1862](https://etherscan.io/address/0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862) | 5/10 | 4.39 | Atomic | <code>grant FULL_RESTRICTED_STAKER_ROLE to affected holder</code><br>→ <code>redistributeLockedAmount(affected holder, admin Safe)</code><br>→ <code>setCooldownDuration(0)</code><br>→ <code>redeem(redistributed shares, controlled recipient, admin Safe)</code> |
 | Ethena | USDeOFTAdapter | $1.77B | [0x5d3a...ef34](https://etherscan.io/address/0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34) | `OWNER` | [0x3b0a...1862](https://etherscan.io/address/0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862) | 5/10 | 4.39 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
 | Ethena - LayerZero | StakedUSDeOFTAdapter | $656.7M | [0x211c...e5d2](https://etherscan.io/address/0x211cc4dd073734da055fbf44a2b4667d5e5fe5d2) | `OWNER` | [0x3b0a...1862](https://etherscan.io/address/0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862) | 5/10 | 4.39 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
 | EtherFi - OFT | EtherfiOFTAdapterUpgradeable | $254.7M | [0xcd2e...ca63](https://etherscan.io/address/0xcd2eb13d6831d4602d80e5db9230a57596cdca63) | `DEFAULT_ADMIN_ROLE` | [0x2aca...8adc](https://etherscan.io/address/0x2aca71020de61bb532008049e1bd41e451ae8adc) | 4/7 | 5.16 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>setInboundRateLimits</code> → <code>ReceiveUln302.verify</code><br>→ <code>ReceiveUln302.commitVerification</code> → <code>endpoint.lzReceive</code> |
 | EtherFi - OFT | EtherfiOFTAdapterUpgradeable | $254.7M | [0xcd2e...ca63](https://etherscan.io/address/0xcd2eb13d6831d4602d80e5db9230a57596cdca63) | `OWNER` | [0x2aca...8adc](https://etherscan.io/address/0x2aca71020de61bb532008049e1bd41e451ae8adc) | 4/7 | 5.16 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>setInboundRateLimits</code> → <code>ReceiveUln302.verify</code><br>→ <code>ReceiveUln302.commitVerification</code> → <code>endpoint.lzReceive</code> |
 | KernelDAO: Bridge | RSETH_OFTAdapter | $232.3M | [0x85d4...8ef3](https://etherscan.io/address/0x85d456b2dff1fd8245387c0bfb64dfb700e98ef3) | `OWNER` | [0xcbcd...29a1](https://etherscan.io/address/0xcbcdd778aa25476f203814214dd3e9b9c46829a1) | 3/6 | 14.2 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
+| Polygon (Matic): Ether Bridge | EtherPredicate | $196.1M | [0x8484...2b30](https://etherscan.io/address/0x8484ef722627bf18ca5ae6bcf031c23e6e922b30) | `DEFAULT_ADMIN_ROLE` | [0xfa7d...b74c](https://etherscan.io/address/0xfa7d2a996ac6350f4b56c043112da0366a59b74c) | 5/9 | 0.77 | Multi-tx | <code>grantRole</code><br>→ <code>exitTokens</code> |
 | Hyperlane | HyperlaneTokenBridge | $155.0M | [0x250b...64f3](https://etherscan.io/address/0x250ba4e73a365cefdd170a2b1ff9fc03097d64f3) | `OWNER` | [0x73d7...496d](https://etherscan.io/address/0x73d7297753f47414a436c1b4123c5113917a496d) | EOA | 1.42 | Atomic | <code>upgradeToAndCall</code><br>→ <code>drainErc20</code> |
 | Linea Bridge | LineaRollup | $128.8M | [0xd19d...876f](https://etherscan.io/address/0xd19d4b5d358258f05d7b411e21a1460d11b0876f) | `DEFAULT_ADMIN_ROLE` | [0x892b...1dd3](https://etherscan.io/address/0x892bb7eed71efb060ab90140e7825d8127991dd3) | 5/9 | 0.51 | Multi-tx | <code>grantRole_SET_YIELD_MANAGER_ROLE</code><br>→ <code>setYieldManager</code><br>→ <code>grantRole_YIELD_PROVIDER_STAKING_ROLE</code><br>→ <code>transferFundsForNativeYield</code> |
 | Cap Labs / Naturelab | StrategyAAVEV3CoreUSDe | $117.5M | [0x9ffe...b464](https://etherscan.io/address/0x9ffe77146cc1da3edb87af163c6c32bab474b464) | `OWNER` | [0x53b3...75e1](https://etherscan.io/address/0x53b36ccbf4a6c5961eb42f0f42fc91d461fd75e1) | 3/5 | 0.12 | Atomic | <code>ProxyAdmin.upgrade</code><br>→ <code>drainErc20</code> |
