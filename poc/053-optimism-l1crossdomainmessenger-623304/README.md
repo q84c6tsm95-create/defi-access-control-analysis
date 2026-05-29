@@ -14,16 +14,17 @@
 
 ## Authority Path
 
-`upgrade -> drainEth`
+`deploy controlled recipient rollup -> updateRollup -> proveAndRelayMessage`
 
 ## Local-Fork Evidence
 
-Original 'setPause' label was scanner-picked config-only. Real drain is via OZ v4 ProxyAdmin.upgrade(messenger, drainer) by the PA owner Safe (0x542675e9...b530), then _drainEth(attacker) takes 4,283 ETH (~$9.16M). Single Safe MultiSend; no rollup-withdrawal-proof path needed; no challenge window applies.
+Original setPause label is config-only. The verified local-fork path uses the listed owner Safe to call updateRollup(attacker-deployed rollup), then the attacker calls proveAndRelayMessage with a nonce-0 zero proof whose root is accepted by the attacker rollup. The messenger sends its ETH balance to the attacker. No protocol code/storage override or endpoint/rollup impersonation is used.
 
 ### Executed Steps
 
-- `upgrade`; sender `0x542675e90e269f20ecbb9e0095d4751ac155b530`
-- `drainEth`; sender `0xdead0000000000000000000000000000deadbeef`
+- `deploy attacker rollup`; sender `0xdead0000000000000000000000000000deadbeef`
+- `updateRollup`; sender `0xb822319ab7848b7cc4537c8409e50f85bfb04377`
+- `proveAndRelayMessage`; sender `0xdead0000000000000000000000000000deadbeef`
 
 ## Reproduction Status
 

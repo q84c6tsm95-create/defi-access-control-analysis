@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Corrected from stale withdrawUndistributedRewards false-positive path. MorpheusAI DistributorV2 is an owner-controlled UUPS proxy; Tenderly confirms one atomic upgradeToAndCall can install attacker logic and execute the stETH drain in the same transaction.
+Corrected from stale withdrawUndistributedRewards false-positive path. MorpheusAI DistributorV2 is an owner-controlled UUPS proxy; local fork confirms one atomic upgradeToAndCall can install attacker logic and execute the stETH drain in the same transaction.
 
 ### Executed Steps
 

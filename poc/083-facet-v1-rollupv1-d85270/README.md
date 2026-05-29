@@ -18,11 +18,12 @@
 
 ## Local-Fork Evidence
 
-Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain confirmed on Tenderly via: RollupV1 ProxyAdmin upgrade. See docs/rollup_v1_proxyadmin_drain_poc.md.
+Local fork no-shortcut verification uses the actual ProxyAdmin owner path: attacker CREATE-deploys a drainer, the real owner Safe executes ProxyAdmin.upgradeAndCall(proxy, drainer, ""), then the attacker calls drainErc20 to move current USDC.
 
 ### Executed Steps
 
-- `setRoot`; sender `0x230dfb03f078b0d5e705f4624fcc915f3126b40f`
+- `ProxyAdmin.upgradeAndCall(proxy, drainer, '')`; sender `0x230dfb03f078b0d5e705f4624fcc915f3126b40f`
+- `drainErc20`; sender `0xdead0000000000000000000000000000deadbeef`; moved $3.4M
 
 ## Reproduction Status
 

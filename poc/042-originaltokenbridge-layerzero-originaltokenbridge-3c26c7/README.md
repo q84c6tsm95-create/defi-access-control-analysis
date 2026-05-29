@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Scanner row was config-ok (the analyzer-picked function is a non-draining setter). Drain confirmed on Tenderly via: LayerZero v1 setTrustedRemoteAddress + forged lzReceive (PT_UNLOCK). See docs/originaltokenbridge_setremote_lzreceive_drain_poc.md.
+Scanner row was config-ok (the analyzer-picked function is a non-draining setter). Drain reproduced on the local fork via: LayerZero v1 setTrustedRemoteAddress + forged lzReceive (PT_UNLOCK). See docs/originaltokenbridge_setremote_lzreceive_drain_poc.md.
 
 ### Executed Steps
 

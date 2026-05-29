@@ -10,20 +10,25 @@
 - Control class: `EOA`
 - Nested Safe: `❌`
 - Funds moved in proof: `$3.6M`
-- Execution class: `Atomic`
+- Execution class: `Multi-tx`
 
 ## Authority Path
 
-`setPaused(true) -> emergencyWithdrawToken(USDC, amount)`
+`setPaused(true) -> emergencyWithdrawToken -> owner transfer`
 
 ## Local-Fork Evidence
 
-Drain confirmed via ProxyManager setPaused + emergencyWithdrawToken. See docs/proxy_manager_emergency_withdraw_drain_poc.md.
+Local fork verified: owner pauses VaultProxy, withdraws current USDC/USDT/DAI balances to the owner, then forwards the withdrawn balances to the attacker.
 
 ### Executed Steps
 
 - `setPaused(true)`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
-- `emergencyWithdrawToken(USDC, 598_408_040107)`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `emergencyWithdrawToken`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `owner transfer`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `emergencyWithdrawToken`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `owner transfer`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `emergencyWithdrawToken`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
+- `owner transfer`; sender `0xeb514cddadac0ae3f95040610c65d0d50060dd46`
 
 ## Reproduction Status
 

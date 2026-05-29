@@ -14,7 +14,7 @@
 
 ## Authority Path
 
-`setBalanceRatioMinBP(0) -> setRouter(controlled recipient) -> swapFromVUsd(controlled recipient, 1000*tokenBalance, 0, false) -> claimAdminFee()`
+`setBalanceRatioMinBP(0) -> setRouter(controlled recipient) -> swapFromVUsd(controlled recipient, 1000*tokenBalance, 0, false) -> claimAdminFee`
 
 ## Local-Fork Evidence
 
@@ -22,10 +22,10 @@ Drain confirmed via Allbridge Pool same pattern (sibling). See docs/allbridge_po
 
 ### Executed Steps
 
-- `setBalanceRatioMinBP(0)`
-- `setRouter(attacker)`
-- `swapFromVUsd(attacker, 1000*tokenBalance, 0, false)`
-- `claimAdminFee()`
+- `setBalanceRatioMinBP(0)`; sender `0x01a494079dcb715f622340301463ce50cd69a4d0`
+- `setRouter(attacker)`; sender `0x01a494079dcb715f622340301463ce50cd69a4d0`
+- `swapFromVUsd(attacker, 1000*tokenBalance, 0, false)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `claimAdminFee`; sender `0x01a494079dcb715f622340301463ce50cd69a4d0`
 
 ## Reproduction Status
 

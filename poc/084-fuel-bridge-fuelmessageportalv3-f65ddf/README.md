@@ -10,7 +10,7 @@
 - Control class: `7/10`
 - Nested Safe: `✅ (1/2)`
 - Funds moved in proof: `$3.3M`
-- Execution class: `Multi-tx`
+- Execution class: `Atomic`
 
 ## Authority Path
 
@@ -18,12 +18,12 @@
 
 ## Local-Fork Evidence
 
-Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain confirmed on Tenderly via: FuelMessagePortalV3 UUPS upgrade via DEFAULT_ADMIN_ROLE. See docs/fuel_message_portal_v3_uups_drain_poc.md.
+Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain reproduced on the local fork via: FuelMessagePortalV3 UUPS upgrade via DEFAULT_ADMIN_ROLE. See docs/fuel_message_portal_v3_uups_drain_poc.md.
 
 ### Executed Steps
 
-- `grantRole`; sender `0x32da601374b38154f05904b16f44a1911aa6f314`
-- `resetRateLimitAmount`; sender `0xdead0000000000000000000000000000deadbeef`
+- `upgradeTo`; sender `0x32da601374b38154f05904b16f44a1911aa6f314`
+- `drainEth`; sender `0xdead0000000000000000000000000000deadbeef`
 
 ## Reproduction Status
 

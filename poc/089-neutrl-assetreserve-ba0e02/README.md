@@ -10,7 +10,7 @@
 - Control class: `EOA`
 - Nested Safe: `❌`
 - Funds moved in proof: `$2.4M`
-- Execution class: `Atomic`
+- Execution class: `Multi-tx`
 
 ## Authority Path
 
@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Corrected from stale transferAdmin config row. DEFAULT_ADMIN_ROLE can call setCustodian(attacker, true), grant AUTHORIZED_ROLE to attacker, and the attacker can call transferToCustodian(attacker, USDC, fullBalance). Tenderly confirms 1,007,233.652429 USDC move to attacker.
+Corrected from stale transferAdmin config row. DEFAULT_ADMIN_ROLE can call setCustodian(attacker, true), grant AUTHORIZED_ROLE to attacker, and the attacker can call transferToCustodian(attacker, USDC, fullBalance). local fork confirms 1,007,233.652429 USDC move to attacker.
 
 ### Executed Steps
 

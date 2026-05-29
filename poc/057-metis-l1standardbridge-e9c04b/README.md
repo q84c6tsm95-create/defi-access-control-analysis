@@ -10,24 +10,24 @@
 - Control class: `6/8`
 - Nested Safe: `❌`
 - Funds moved in proof: `$8.1M`
-- Execution class: `Atomic`
+- Execution class: `Multi-tx`
 
 ## Authority Path
 
-`setCode -> drainEth -> drainErc20 -> drainErc20 -> drainErc20 -> drainErc20`
+`Safe.execTransaction -> setCode -> drainEth -> drainErc20 -> drainErc20 -> drainErc20 -> drainErc20`
 
 ## Local-Fork Evidence
 
-L2BEAT validiums/others follow-up PoC verified on local fork.
+Local fork no-shortcut verification: the real 6/8 owner Safe executes L1ChugSplashProxy.setCode(bytes) through execTransaction, installing the drainer runtime via the protocol upgrade path, then the attacker drains current ETH, WETH, USDC, DAI, and WBTC balances. No protocol code or storage override is used.
 
 ### Executed Steps
 
-- `setCode`; sender `0xbf1752de62d825af0634f514226f881a449874b6`
+- `Safe.execTransaction -> setCode`; sender `0xbf1752de62d825af0634f514226f881a449874b6`
 - `drainEth`; sender `0xdead0000000000000000000000000000deadbeef`
-- `drainErc20`; sender `0xdead0000000000000000000000000000deadbeef`
-- `drainErc20`; sender `0xdead0000000000000000000000000000deadbeef`
-- `drainErc20`; sender `0xdead0000000000000000000000000000deadbeef`
-- `drainErc20`; sender `0xdead0000000000000000000000000000deadbeef`
+- `drainErc20(WETH)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `drainErc20(USDC)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `drainErc20(DAI)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `drainErc20(WBTC)`; sender `0xdead0000000000000000000000000000deadbeef`
 
 ## Reproduction Status
 

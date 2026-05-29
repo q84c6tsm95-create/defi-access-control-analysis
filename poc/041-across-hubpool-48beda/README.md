@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain confirmed on Tenderly via: HubPool (Across) setCrossChainContracts + _relaySpokePoolAdminFunction delegatecall arbitrary-code. See docs/hubpool_setcrosschain_delegatecall_drain_poc.md.
+Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain reproduced on the local fork via: HubPool (Across) setCrossChainContracts + _relaySpokePoolAdminFunction delegatecall arbitrary-code. See docs/hubpool_setcrosschain_delegatecall_drain_poc.md.
 
 ### Executed Steps
 

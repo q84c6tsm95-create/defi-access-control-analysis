@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Corrected from rescueTokens false positive. rescueTokens rejects the USDe asset, but DEFAULT_ADMIN_ROLE can grant FULL_RESTRICTED_STAKER_ROLE to a live sUSDe holder, redistribute that holder's shares to the admin Safe, set cooldownDuration to zero, and redeem the redistributed shares to attacker. Tenderly confirms USDe moves to attacker in one Safe-controlled bundle.
+Corrected from rescueTokens false positive. rescueTokens rejects the USDe asset, but DEFAULT_ADMIN_ROLE can grant FULL_RESTRICTED_STAKER_ROLE to a live sUSDe holder, redistribute that holder's shares to the admin Safe, set cooldownDuration to zero, and redeem the redistributed shares to attacker. local fork confirms USDe moves to attacker in one Safe-controlled bundle.
 
 ### Executed Steps
 

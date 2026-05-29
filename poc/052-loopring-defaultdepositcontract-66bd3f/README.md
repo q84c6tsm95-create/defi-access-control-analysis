@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Loopring system-level drain: DefaultDepositContract.setCheckBalance is false positive, but the trusted exchange is an OwnedUpgradabilityProxy. Proxy owner Safe 2/3 upgrades the exchange implementation, then the malicious implementation calls DefaultDepositContract.withdraw(...). Because msg.sender is the trusted exchange proxy, onlyExchange passes. Tenderly confirmed 3190.909394510272402941 ETH moved to attacker.
+Loopring system-level drain: the DefaultDepositContract custody risk is reachable through the trusted exchange proxy. The proxy owner Safe can execute upgradeTo(malicious implementation), then an attacker call through the exchange proxy invokes DefaultDepositContract.withdraw(...). The deposit contract sees msg.sender as the trusted exchange proxy, so onlyExchange passes. Local fork no-shortcut verification moved the current ETH balance to the attacker.
 
 ### Executed Steps
 

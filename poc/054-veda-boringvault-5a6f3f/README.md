@@ -14,15 +14,15 @@
 
 ## Authority Path
 
-`manage_transfer_USDC`
+`manage -> transfer`
 
 ## Local-Fork Evidence
 
-Manual >$500k review: privileged single-call path executed and transferred $8,936,790 USDC to the attacker.
+Local fork no-shortcut verification: the listed owner/Safe executed BoringVault.manage(token, transfer(attacker, current balance), 0), moving the current fork token balance to the attacker.
 
 ### Executed Steps
 
-- `manage_transfer_USDC`; sender `0xa08a0dc480bd60d1d56c8eec6c722125eafea982`
+- `manage -> transfer`; sender `0xa08a0dc480bd60d1d56c8eec6c722125eafea982`
 
 ## Reproduction Status
 

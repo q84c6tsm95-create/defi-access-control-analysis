@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Corrected from stale transferAdmin / MINTER_ROLE mint rows. MINTER_ROLE mint requires valid signed benefactor orders and collateral transfer, but DEFAULT_ADMIN_ROLE can add attacker as a custodian, grant COLLATERAL_MANAGER_ROLE, and transfer live USDC collateral to attacker custody. Tenderly confirms 15,000,000 USDC move to attacker.
+Corrected from stale transferAdmin / MINTER_ROLE mint rows. MINTER_ROLE mint requires valid signed benefactor orders and collateral transfer, but DEFAULT_ADMIN_ROLE can add attacker as a custodian, grant COLLATERAL_MANAGER_ROLE, and transfer live USDC collateral to attacker custody. local fork confirms 15,000,000 USDC move to attacker.
 
 ### Executed Steps
 

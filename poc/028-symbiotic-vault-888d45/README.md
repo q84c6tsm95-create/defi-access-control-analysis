@@ -18,7 +18,7 @@
 
 ## Local-Fork Evidence
 
-Vault impl is config-only, but the same admin Safe also owns the BurnerRouter and admins the Delegator. Real full-stack drain confirmed on Tenderly via registerNetwork/registerOperator -> setMiddleware -> opt-ins -> setMaxNetworkLimit -> setNetworkLimit -> setOperatorNetworkShares -> setGlobalReceiver -> acceptGlobalReceiver -> requestSlash -> executeSlash -> triggerTransfer. See docs/symbiotic_kiln_full_stack_drain_poc.md.
+Vault impl is config-only, but the same admin Safe also owns the BurnerRouter and admins the Delegator. Real full-stack drain confirmed on local fork via registerNetwork/registerOperator -> setMiddleware -> opt-ins -> setMaxNetworkLimit -> setNetworkLimit -> setOperatorNetworkShares -> setGlobalReceiver -> acceptGlobalReceiver -> requestSlash -> executeSlash -> triggerTransfer. See docs/symbiotic_kiln_full_stack_drain_poc.md.
 
 ### Executed Steps
 

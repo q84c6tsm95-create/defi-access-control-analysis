@@ -14,17 +14,17 @@
 
 ## Authority Path
 
-`L1CrossDomainMessenger.updateRollup(controlled rollup) -> proveAndRelayMessage → finalizeWithdrawERC20(USDT, amount to controlled recipient) -> proveAndRelayMessage → finalizeWithdrawERC20(WBTC, amount to controlled recipient)`
+`updateRollup(controlled rollup) -> proveAndRelayMessage(finalizeWithdrawERC20 0xdac17f958d2ee523a2206206994597c13d831ec7) -> proveAndRelayMessage(finalizeWithdrawERC20 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)`
 
 ## Local-Fork Evidence
 
-Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain confirmed on Tenderly via: L1StandardERC20Gateway (Morph) chained via same-Safe messenger. See docs/l1_standard_erc20_gateway_morph_chained_drain_poc.md.
+Scanner row was config-ok (analyzer-picked function is a non-draining setter). Drain reproduced on the local fork via: L1StandardERC20Gateway (Morph) chained via same-Safe messenger. See docs/l1_standard_erc20_gateway_morph_chained_drain_poc.md.
 
 ### Executed Steps
 
-- `L1CrossDomainMessenger.updateRollup(attackerRollup)`; sender `0xb822319ab7848b7cc4537c8409e50f85bfb04377`
-- `proveAndRelayMessage → finalizeWithdrawERC20(USDT, 3019660731298 to attacker)`; sender `0xdead0000000000000000000000000000deadbeef`
-- `proveAndRelayMessage → finalizeWithdrawERC20(WBTC, 16524530 to attacker)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `updateRollup(attackerRollup)`; sender `0xb822319ab7848b7cc4537c8409e50f85bfb04377`
+- `proveAndRelayMessage(finalizeWithdrawERC20 0xdac17f958d2ee523a2206206994597c13d831ec7)`; sender `0xdead0000000000000000000000000000deadbeef`
+- `proveAndRelayMessage(finalizeWithdrawERC20 0x2260fac5e5542a773aa44fbcfedf7c193bc2c599)`; sender `0xdead0000000000000000000000000000deadbeef`
 
 ## Reproduction Status
 
