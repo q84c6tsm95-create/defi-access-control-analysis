@@ -26,12 +26,12 @@ Row-level evidence folders are published in [`poc/`](./poc/) with the authority 
 | EOA | 20 | $269.1M |
 | Safe 1/n | 2 | $2.0M |
 | Safe 2/n | 31 | $2.73B |
-| Safe 3/n | 39 | $4.33B |
+| Safe 3/n | 40 | $4.33B |
 | Safe 4/n | 23 | $433.7M |
 | Safe 5/n | 17 | $6.70B |
 | Safe 6/n | 8 | $396.1M |
 | Other scheme | 7 | $192.0M |
-| **Total** | **147** | **$15.06B** |
+| **Total** | **148** | **$15.06B** |
 
 ## Full authority table
 
@@ -166,6 +166,7 @@ Row-level evidence folders are published in [`poc/`](./poc/) with the authority 
 | Quantfury Data Token | QDT | $834.4K | [0xd184...6f7e](https://etherscan.io/address/0xd18475521245a127a933a4fcaf99e8c45a416f7e) | `OWNER` | [0x79eb...af2e](https://etherscan.io/address/0x79eb80d95da726f628b630839c256602a2acaf2e) | EOA | ❌ | 2.58 | Atomic | <code>withdraw</code> |
 | TransparentUpgradeableProxy | TransparentUpgradeable<br>Proxy | $827.9K | [0x688a...9a2f](https://etherscan.io/address/0x688aee022aa544f150678b8e5720b6b96a9e9a2f) | `OWNER` | [0xce1c...34e8](https://etherscan.io/address/0xce1ce7c7f436dcc4e28bc8bf86115514d3dc34e8) | 3/5 | ❌ | 1.35 | Atomic | <code>endpoint.setConfig Safe-as-DVN</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
 | Dinero | Claimer | $788.4K | [0x6fdc...2812](https://etherscan.io/address/0x6fdccbd039aef9f1f4caa9fa1afd565e10262812) | `OWNER` | [0xe687...9065](https://etherscan.io/address/0xe68719225d7be0dec61766e80780c86abdc89065) | 3/7 | ❌ | 1.31 | Atomic | <code>withdraw</code> |
+| Hyperlane | HypERC20Collateral | $769.9K | [0xe78f...80dd](https://etherscan.io/address/0xe78fa49be021e533cd8f6e10931b796d89cd80dd) | `OWNER` | [0x3ea0...8f30](https://etherscan.io/address/0x3ea04c1cddebf600da09e6fe0654835f27258f30) | 3/4 | ❌ | 0.29 | Multi-tx | <code>enrollRemoteRouter</code><br>→ <code>handle</code> |
 | Rayls | RewardVault | $767.4K | [0xdf06...21ec](https://etherscan.io/address/0xdf06052f307c8e0ec3bd8cba8e448918905721ec) | `DEFAULT_ADMIN_ROLE` | [0x60f0...6309](https://etherscan.io/address/0x60f0e09e51704ea6e472f877f849269eede76309) | 4/6 | ❌ | 1.61 | Multi-tx | <code>grantRole</code><br>→ <code>withdrawUSDC</code> |
 | Nucleus: tETH Token | BoringVault | $749.7K | [0x19e0...0b32](https://etherscan.io/address/0x19e099b7aed41fa52718d780dda74678113c0b32) | `OWNER` | [0x0000...3f2f](https://etherscan.io/address/0x0000000000417626ef34d62c4dc189b021603f2f) | 3/5 | ❌ | 8.16 | Atomic | <code>manage</code><br>→ <code>transfer</code> |
 | MultiSigSmartAccount | MultiSigSmartAccount | $712.9K | [0x2258...08e1](https://etherscan.io/address/0x22580e995c8bc686d56a1f12825f7eab01c408e1) | `OWNER_ROLE` | [0xce04...645f](https://etherscan.io/address/0xce04349557204d02fc95a98cb21146755fd2645f) | EOA | ❌ | 0 | Atomic | <code>execute(USDC.transfer)</code> |

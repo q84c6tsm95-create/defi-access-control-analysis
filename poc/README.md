@@ -133,26 +133,27 @@ Generated from the current publication rows. Each subfolder contains the row-lev
 | 127 | Quantfury Data Token | QDT | $834.4K | Atomic | [127-quantfury-data-token-qdt-416f7e](./127-quantfury-data-token-qdt-416f7e/) |
 | 128 | TransparentUpgradeableProxy | TransparentUpgradeableProxy | $827.9K | Atomic | [128-transparentupgradeableproxy-transparentupgradeableproxy-9e9a2f](./128-transparentupgradeableproxy-transparentupgradeableproxy-9e9a2f/) |
 | 129 | Dinero | Claimer | $788.4K | Atomic | [129-dinero-claimer-262812](./129-dinero-claimer-262812/) |
-| 130 | Rayls | RewardVault | $767.4K | Multi-tx | [130-rayls-rewardvault-5721ec](./130-rayls-rewardvault-5721ec/) |
-| 131 | Nucleus: tETH Token | BoringVault | $749.7K | Atomic | [131-nucleus-teth-token-boringvault-3c0b32](./131-nucleus-teth-token-boringvault-3c0b32/) |
-| 132 | MultiSigSmartAccount | MultiSigSmartAccount | $712.9K | Atomic | [132-multisigsmartaccount-multisigsmartaccount-c408e1](./132-multisigsmartaccount-multisigsmartaccount-c408e1/) |
-| 133 | MorphoOFTAdapter | MorphoOFTAdapter | $706.8K | Atomic | [133-morphooftadapter-morphooftadapter-5649d9](./133-morphooftadapter-morphooftadapter-5649d9/) |
-| 134 | Lisk | L1StandardBridge | $701.5K | Multi-tx | [134-lisk-l1standardbridge-d25d08](./134-lisk-l1standardbridge-d25d08/) |
-| 135 | IskraOFTAdapter | IskraOFTAdapter | $692.9K | Atomic | [135-iskraoftadapter-iskraoftadapter-3bcf8f](./135-iskraoftadapter-iskraoftadapter-3bcf8f/) |
-| 136 | TransparentUpgradeableProxy | TransparentUpgradeableProxy | $680.7K | Atomic | [136-transparentupgradeableproxy-transparentupgradeableproxy-1ad06c](./136-transparentupgradeableproxy-transparentupgradeableproxy-1ad06c/) |
-| 137 | Hemi | L1StandardBridge | $676.4K | Atomic | [137-hemi-l1standardbridge-9f191e](./137-hemi-l1standardbridge-9f191e/) |
-| 138 | WilderWorldOFTAdapter | WilderWorldOFTAdapter | $671.2K | Atomic | [138-wilderworldoftadapter-wilderworldoftadapter-58db0d](./138-wilderworldoftadapter-wilderworldoftadapter-58db0d/) |
-| 139 | Upshift: upUSDC Token | LendingPoolv3 | $643.1K | Atomic | [139-upshift-upusdc-token-lendingpoolv3-ff6a42](./139-upshift-upusdc-token-lendingpoolv3-ff6a42/) |
-| 140 | MyOFTAdapter | MyOFTAdapter | $639.5K | Atomic | [140-myoftadapter-myoftadapter-d9b433](./140-myoftadapter-myoftadapter-d9b433/) |
-| 141 | Optimism USDC Bridge Adapter | L1OpUSDCBridgeAdapter | $621.1K | Multi-tx | [141-optimism-usdc-bridge-adapter-l1opusdcbridgeadapter-6995e6](./141-optimism-usdc-bridge-adapter-l1opusdcbridgeadapter-6995e6/) |
-| 142 | SwellOFTAdapter | SwellOFTAdapter | $617.3K | Atomic | [142-swelloftadapter-swelloftadapter-9d85b7](./142-swelloftadapter-swelloftadapter-9d85b7/) |
-| 143 | Hemi | OptimismPortal | $607.6K | Atomic | [143-hemi-optimismportal-3a4d7e](./143-hemi-optimismportal-3a4d7e/) |
-| 144 | TransparentUpgradeableProxy | TransparentUpgradeableProxy | $593.9K | Atomic | [144-transparentupgradeableproxy-transparentupgradeableproxy-451978](./144-transparentupgradeableproxy-transparentupgradeableproxy-451978/) |
-| 145 | Hakka Finance GuildBank | GuildBank | $586.0K | Atomic | [145-hakka-finance-guildbank-guildbank-bec8e7](./145-hakka-finance-guildbank-guildbank-bec8e7/) |
-| 146 | Tokemak: WETH Pool | EthPool | $581.8K | Multi-tx | [146-tokemak-weth-pool-ethpool-2a2f36](./146-tokemak-weth-pool-ethpool-2a2f36/) |
-| 147 | Redstone | OptimismPortal | $571.7K | Atomic | [147-redstone-optimismportal-da51ae](./147-redstone-optimismportal-da51ae/) |
-| 148 | Metal | OptimismPortal2 | $566.8K | Atomic | [148-metal-optimismportal2-753956](./148-metal-optimismportal2-753956/) |
-| 149 | WETH OFT / LayerZero | WETHOFTAdapter | $559.6K | Atomic | [149-weth-oft-layerzero-wethoftadapter-a526e8](./149-weth-oft-layerzero-wethoftadapter-a526e8/) |
-| 150 | Redacted Cartel: Reward Distributor | RewardDistributor | $546.4K | Delayed | [150-redacted-cartel-reward-distributor-rewarddistributor-7d6416](./150-redacted-cartel-reward-distributor-rewarddistributor-7d6416/) |
-| 151 | Optimism | L1USDCGateway | $544.7K | Atomic | [151-optimism-l1usdcgateway-e1b289](./151-optimism-l1usdcgateway-e1b289/) |
-| 152 | Miner | Miner | $509.2K | Atomic | [152-miner-miner-9c52de](./152-miner-miner-9c52de/) |
+| 130 | Hyperlane | HypERC20Collateral | $769.9K | Multi-tx | [130-hyperlane-hyperc20collateral-cd80dd](./130-hyperlane-hyperc20collateral-cd80dd/) |
+| 131 | Rayls | RewardVault | $767.4K | Multi-tx | [131-rayls-rewardvault-5721ec](./131-rayls-rewardvault-5721ec/) |
+| 132 | Nucleus: tETH Token | BoringVault | $749.7K | Atomic | [132-nucleus-teth-token-boringvault-3c0b32](./132-nucleus-teth-token-boringvault-3c0b32/) |
+| 133 | MultiSigSmartAccount | MultiSigSmartAccount | $712.9K | Atomic | [133-multisigsmartaccount-multisigsmartaccount-c408e1](./133-multisigsmartaccount-multisigsmartaccount-c408e1/) |
+| 134 | MorphoOFTAdapter | MorphoOFTAdapter | $706.8K | Atomic | [134-morphooftadapter-morphooftadapter-5649d9](./134-morphooftadapter-morphooftadapter-5649d9/) |
+| 135 | Lisk | L1StandardBridge | $701.5K | Multi-tx | [135-lisk-l1standardbridge-d25d08](./135-lisk-l1standardbridge-d25d08/) |
+| 136 | IskraOFTAdapter | IskraOFTAdapter | $692.9K | Atomic | [136-iskraoftadapter-iskraoftadapter-3bcf8f](./136-iskraoftadapter-iskraoftadapter-3bcf8f/) |
+| 137 | TransparentUpgradeableProxy | TransparentUpgradeableProxy | $680.7K | Atomic | [137-transparentupgradeableproxy-transparentupgradeableproxy-1ad06c](./137-transparentupgradeableproxy-transparentupgradeableproxy-1ad06c/) |
+| 138 | Hemi | L1StandardBridge | $676.4K | Atomic | [138-hemi-l1standardbridge-9f191e](./138-hemi-l1standardbridge-9f191e/) |
+| 139 | WilderWorldOFTAdapter | WilderWorldOFTAdapter | $671.2K | Atomic | [139-wilderworldoftadapter-wilderworldoftadapter-58db0d](./139-wilderworldoftadapter-wilderworldoftadapter-58db0d/) |
+| 140 | Upshift: upUSDC Token | LendingPoolv3 | $643.1K | Atomic | [140-upshift-upusdc-token-lendingpoolv3-ff6a42](./140-upshift-upusdc-token-lendingpoolv3-ff6a42/) |
+| 141 | MyOFTAdapter | MyOFTAdapter | $639.5K | Atomic | [141-myoftadapter-myoftadapter-d9b433](./141-myoftadapter-myoftadapter-d9b433/) |
+| 142 | Optimism USDC Bridge Adapter | L1OpUSDCBridgeAdapter | $621.1K | Multi-tx | [142-optimism-usdc-bridge-adapter-l1opusdcbridgeadapter-6995e6](./142-optimism-usdc-bridge-adapter-l1opusdcbridgeadapter-6995e6/) |
+| 143 | SwellOFTAdapter | SwellOFTAdapter | $617.3K | Atomic | [143-swelloftadapter-swelloftadapter-9d85b7](./143-swelloftadapter-swelloftadapter-9d85b7/) |
+| 144 | Hemi | OptimismPortal | $607.6K | Atomic | [144-hemi-optimismportal-3a4d7e](./144-hemi-optimismportal-3a4d7e/) |
+| 145 | TransparentUpgradeableProxy | TransparentUpgradeableProxy | $593.9K | Atomic | [145-transparentupgradeableproxy-transparentupgradeableproxy-451978](./145-transparentupgradeableproxy-transparentupgradeableproxy-451978/) |
+| 146 | Hakka Finance GuildBank | GuildBank | $586.0K | Atomic | [146-hakka-finance-guildbank-guildbank-bec8e7](./146-hakka-finance-guildbank-guildbank-bec8e7/) |
+| 147 | Tokemak: WETH Pool | EthPool | $581.8K | Multi-tx | [147-tokemak-weth-pool-ethpool-2a2f36](./147-tokemak-weth-pool-ethpool-2a2f36/) |
+| 148 | Redstone | OptimismPortal | $571.7K | Atomic | [148-redstone-optimismportal-da51ae](./148-redstone-optimismportal-da51ae/) |
+| 149 | Metal | OptimismPortal2 | $566.8K | Atomic | [149-metal-optimismportal2-753956](./149-metal-optimismportal2-753956/) |
+| 150 | WETH OFT / LayerZero | WETHOFTAdapter | $559.6K | Atomic | [150-weth-oft-layerzero-wethoftadapter-a526e8](./150-weth-oft-layerzero-wethoftadapter-a526e8/) |
+| 151 | Redacted Cartel: Reward Distributor | RewardDistributor | $546.4K | Delayed | [151-redacted-cartel-reward-distributor-rewarddistributor-7d6416](./151-redacted-cartel-reward-distributor-rewarddistributor-7d6416/) |
+| 152 | Optimism | L1USDCGateway | $544.7K | Atomic | [152-optimism-l1usdcgateway-e1b289](./152-optimism-l1usdcgateway-e1b289/) |
+| 153 | Miner | Miner | $509.2K | Atomic | [153-miner-miner-9c52de](./153-miner-miner-9c52de/) |
