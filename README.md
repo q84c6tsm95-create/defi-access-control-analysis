@@ -4,6 +4,11 @@ This report analyzes Ethereum contracts with ownership or privileged-control pat
 
 Row-level evidence folders are published in [`poc/`](./poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
 
+## Interactive explorer
+
+A static GitHub Pages dashboard is available under [`docs/`](./docs/) for charted exploration, dynamic filtering, and direct row-level PoC links. The canonical report remains [`weak-access-control-report.md`](./weak-access-control-report.md).
+
+
 Publication-scope funds at risk: **$15.05B** across **153** locally verified authority rows / **148** contracts.
 
 This is a contract-deduplicated total: if the same contract appears in multiple authority rows, its value is counted once in the headline and control-class summary. The full table remains row-level so each distinct authority path is auditable.
