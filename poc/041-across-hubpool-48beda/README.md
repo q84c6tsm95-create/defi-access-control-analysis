@@ -14,7 +14,7 @@
 
 ## Authority Path
 
-`setCrossChainContracts(chainId=1, adapter=replacement, spokePool=placeholder) -> relaySpokePoolAdminFunction(chainId=1, data="")`
+`setCrossChainContracts(chainId=1, adapter=replacement, spokePool=supporting contract) -> relaySpokePoolAdminFunction(chainId=1, data="")`
 
 ## Local-Fork Evidence
 
@@ -28,4 +28,3 @@ Scanner row was config-ok (analyzer-picked function is a non-draining setter). D
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

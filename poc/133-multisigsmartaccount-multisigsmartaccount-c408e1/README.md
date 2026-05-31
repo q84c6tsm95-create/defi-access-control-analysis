@@ -27,4 +27,3 @@ Existing OWNER_ROLE holder can directly call execute with USDC.transfer(attacker
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

@@ -28,4 +28,3 @@ Local-fork execution evidence is present for this publication row.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

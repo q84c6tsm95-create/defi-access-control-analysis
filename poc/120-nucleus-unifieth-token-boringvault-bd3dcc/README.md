@@ -27,4 +27,3 @@ Local fork no-shortcut verification: the listed owner/Safe executed BoringVault.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

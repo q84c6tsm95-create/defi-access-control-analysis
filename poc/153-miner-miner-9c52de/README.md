@@ -28,4 +28,3 @@ Corrected from switchPrice config-ok. Owner can set attacker as manager via upda
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

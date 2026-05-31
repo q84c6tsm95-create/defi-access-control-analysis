@@ -32,4 +32,3 @@ Local fork no-shortcut verification: the real 6/8 owner Safe executes L1ChugSpla
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

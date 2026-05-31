@@ -28,4 +28,3 @@ Original sim recorded only step 1 (upgradeToAndCall). Fresh 2-step bundle on 202
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

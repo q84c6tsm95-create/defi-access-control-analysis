@@ -27,4 +27,3 @@ Owner can call withdraw(ETH sentinel, attacker, current ETH balance); local fork
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

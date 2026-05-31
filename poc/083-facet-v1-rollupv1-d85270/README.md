@@ -28,4 +28,3 @@ Local fork no-shortcut verification uses the actual ProxyAdmin owner path: attac
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

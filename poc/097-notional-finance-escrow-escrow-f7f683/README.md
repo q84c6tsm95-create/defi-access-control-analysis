@@ -29,4 +29,3 @@ Local fork verified: owner Safe upgraded the Notional V1 Escrow proxy through it
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

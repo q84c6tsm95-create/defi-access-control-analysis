@@ -27,4 +27,3 @@ Confirmed atomic UUPS owner-compromise path for ADEN / GateLayer deposit wallet.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

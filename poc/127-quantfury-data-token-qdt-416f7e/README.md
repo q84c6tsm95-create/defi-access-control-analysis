@@ -27,4 +27,3 @@ Corrected config-ok: full-amount withdraw(attacker, 405292050035529229343) succe
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

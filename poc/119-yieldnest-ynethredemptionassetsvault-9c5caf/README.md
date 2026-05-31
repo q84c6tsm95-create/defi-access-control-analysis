@@ -28,4 +28,3 @@ ynETH Redemption vault TUP (scanner originally classified as UUPS). Recorded bot
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

@@ -39,4 +39,3 @@ Vault impl is config-only, but the same admin Safe also owns the BurnerRouter an
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

@@ -28,4 +28,3 @@ Drain confirmed via USDCProxyOFTV2 setTrustedRemoteAddress + lzReceive PT_SEND (
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

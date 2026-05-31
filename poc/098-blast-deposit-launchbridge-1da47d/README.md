@@ -27,4 +27,3 @@ Local fork verified: owner Safe upgraded LaunchBridge to an attacker-deployed ra
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-
