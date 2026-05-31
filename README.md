@@ -4,6 +4,10 @@ This report analyzes Ethereum contracts with ownership or privileged-control pat
 
 Row-level evidence folders are published in [`poc/`](./poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
 
+Publication-scope funds at risk: **$15.06B** across **153** locally verified authority rows / **148** contracts.
+
+The no-shortcut replay verifier separately tracks the original drained-claim replay universe: **220/229** claims verified, covering **$12.79B** of **$12.80B**. That verifier total is a coverage metric for the replay universe; the table below uses current publication `money_at_risk` values for rows whose local-fork paths are verified.
+
 ## Methodology
 
 - Starting universe: `bigquery-public-data.crypto_ethereum.contracts` contained **99,515,714** unique Ethereum contract addresses across **100,028,511** creation records when checked for this draft.
