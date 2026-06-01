@@ -4,6 +4,11 @@
 !foundry.toml
 !poc/
 !poc/**
+!docs/
+!docs/index.html
+!docs/styles.css
+!docs/app.js
+!docs/report-data.json
 !test/
 !test/publication/
 !test/publication/**

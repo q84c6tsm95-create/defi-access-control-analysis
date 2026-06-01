@@ -27,4 +27,3 @@ Manual >$500k review: EIP173Proxy owner Safe can call upgradeToAndCall(drainer, 
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

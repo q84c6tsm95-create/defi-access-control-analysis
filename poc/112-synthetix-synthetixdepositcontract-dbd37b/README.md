@@ -29,4 +29,3 @@ Drain confirmed via SynthetixDepositContract setSLPVault + approveSLPVault. See 
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

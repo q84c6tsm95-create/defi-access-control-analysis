@@ -29,4 +29,3 @@ Local-fork no-shortcut verification: the DEFAULT_ADMIN_ROLE EOA calls the custom
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

@@ -27,4 +27,3 @@ Corrected config-ok: pay(DAI, attacker, 877946039919975426518825, "audit") succe
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

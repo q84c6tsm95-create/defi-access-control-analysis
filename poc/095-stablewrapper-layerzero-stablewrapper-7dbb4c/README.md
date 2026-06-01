@@ -27,4 +27,3 @@ Drain confirmed via StableWrapper transferAsset. See docs/stable_wrapper_transfe
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

@@ -28,4 +28,3 @@ Implementation OWNER pause is only liveness control; full-stack ProxyAdmin owner
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

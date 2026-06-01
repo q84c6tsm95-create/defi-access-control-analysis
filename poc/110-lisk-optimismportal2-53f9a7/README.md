@@ -29,4 +29,3 @@ L2BEAT validiums/others follow-up PoC verified on local fork.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

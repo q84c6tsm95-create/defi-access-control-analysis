@@ -6,7 +6,7 @@ Generated from the current publication rows. Each subfolder contains the row-lev
 |---:|---|---|---:|---|---|
 | 1 | USDT0 - OFT | OAdapterUpgradeable | $3.54B | Atomic | [001-usdt0-oft-oadapterupgradeable-a41dee](./001-usdt0-oft-oadapterupgradeable-a41dee/) |
 | 2 | Polygon | ERC20Predicate | $2.00B | Multi-tx | [002-polygon-erc20predicate-5bbbdf](./002-polygon-erc20predicate-5bbbdf/) |
-| 3 | Ethena | StakedUSDeV2 | $1.81B | Atomic | [003-ethena-stakedusdev2-7a3497](./003-ethena-stakedusdev2-7a3497/) |
+| 3 | Ethena | StakedUSDeV2 | $1.79B | Delayed (8 hours) | [003-ethena-stakedusdev2-7a3497](./003-ethena-stakedusdev2-7a3497/) |
 | 4 | Base | OptimismPortal2 | $1.77B | Atomic | [004-base-optimismportal2-74e97e](./004-base-optimismportal2-74e97e/) |
 | 5 | Ethena - OFT | USDeOFTAdapter | $1.77B | Atomic | [005-ethena-oft-usdeoftadapter-52ef34](./005-ethena-oft-usdeoftadapter-52ef34/) |
 | 6 | Ethena - OFT | StakedUSDeOFTAdapter | $656.7M | Atomic | [006-ethena-oft-stakedusdeoftadapter-5fe5d2](./006-ethena-oft-stakedusdeoftadapter-5fe5d2/) |

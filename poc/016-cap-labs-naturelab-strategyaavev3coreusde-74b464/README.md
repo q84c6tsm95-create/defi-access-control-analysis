@@ -28,4 +28,3 @@ Reclassified from iterated swap+sendUSDT (DEX-bounded ~$123K/tx). ProxyAdmin 0xb
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

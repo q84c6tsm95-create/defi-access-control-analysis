@@ -33,4 +33,3 @@ Local fork verified: owner pauses VaultProxy, withdraws current USDC/USDT/DAI ba
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

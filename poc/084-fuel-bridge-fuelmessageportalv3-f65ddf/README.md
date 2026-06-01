@@ -28,4 +28,3 @@ Scanner row was config-ok (analyzer-picked function is a non-draining setter). D
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

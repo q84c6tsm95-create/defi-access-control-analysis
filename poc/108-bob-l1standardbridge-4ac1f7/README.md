@@ -32,4 +32,3 @@ L2BEAT upgrade permission verified on local fork via recorded ProxyAdmin path.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

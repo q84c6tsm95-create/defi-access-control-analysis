@@ -31,4 +31,3 @@ Local fork no-shortcut verification: attacker deploys a no-op proof verifier via
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

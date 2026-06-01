@@ -28,4 +28,3 @@ Local fork verified: owner Safe setRebalancer(attacker), then attacker-rebalance
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-

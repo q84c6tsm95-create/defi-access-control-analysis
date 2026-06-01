@@ -29,4 +29,3 @@ Original setPause label is config-only. The verified local-fork path uses the li
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-
