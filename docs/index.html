@@ -22,25 +22,26 @@
     </nav>
 
     <section class="intro panel">
-      <div>
-        <p class="eyebrow">Ethereum authority-risk research</p>
-        <h1>Privileged-control exposure explorer</h1>
-        <p class="lede">A filterable view of the published Markdown report and row-level PoC evidence.</p>
-      </div>
-      <div class="stats" aria-label="Report summary">
-        <div><strong id="headlineFunds">—</strong><span>funds at risk</span></div>
-        <div><strong id="rowCount">—</strong><span>rows</span></div>
-        <div><strong id="contractCount">—</strong><span>contracts</span></div>
-        <div><strong id="blockNumber">—</strong><span>fork block</span></div>
+      <div class="intro-copy">
+        <h1>Ethereum Access Control Risk Report</h1>
+        <p>This report analyzes Ethereum contracts with ownership or privileged-control patterns where the controlling address is an EOA or Gnosis Safe. Compromise of the listed holder could lead to loss of funds.</p>
+        <p>Row-level evidence folders are published in <a href="../poc/">poc/</a> with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.</p>
+        <p><strong id="headlineFunds">—</strong> publication-scope funds at risk across <strong id="rowCount">—</strong> locally verified authority rows / <strong id="contractCount">—</strong> contracts. Local-fork verification block: <strong id="blockNumber">—</strong>.</p>
       </div>
     </section>
   </header>
 
   <main>
-    <section class="notice"><strong>Framing:</strong> <span id="disclaimerText"></span> Risk model: compromise, coercion, governance capture, or misuse of an already-privileged authority.</section>
+    <section class="notice"><strong>Disclaimer:</strong> <span id="disclaimerText"></span> Risk model: compromise, coercion, governance capture, or misuse of an already-privileged authority.</section>
+
+    <section class="chart-strip" aria-label="Grouped summary charts">
+      <article class="panel chart-card"><div class="panel-head"><h2>Control class</h2><span>contract-deduped</span></div><canvas id="controlChart" height="190"></canvas></article>
+      <article class="panel chart-card"><div class="panel-head"><h2>Execution class</h2><span>row-level</span></div><canvas id="executionChart" height="190"></canvas></article>
+      <article class="panel chart-card wide"><div class="panel-head"><h2>Top exposure groups</h2><span>row-level aggregate</span></div><canvas id="protocolChart" height="220"></canvas></article>
+    </section>
 
     <section class="filters panel">
-      <div class="panel-head"><h2>Explore authority rows</h2><span id="resultCount">—</span></div>
+      <div class="panel-head"><h2>Authority rows</h2><span id="resultCount">—</span></div>
       <div class="filter-grid">
         <label>Search<input id="searchInput" placeholder="protocol, contract, address, role, path" /></label>
         <label>Control class<select id="controlFilter"><option value="">All</option></select></label>
@@ -56,13 +57,7 @@
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Protocol / contract</th><th>Funds</th><th>Control</th><th>Execution</th><th>Nested</th><th>Avg tx/wk</th><th>Evidence</th></tr></thead><tbody id="rowsBody"></tbody></table></div>
     </section>
 
-    <section class="cards" id="summaryCards" aria-label="Additional summary metrics"></section>
-
-    <section class="dashboard-grid" aria-label="Charts">
-      <article class="panel"><div class="panel-head"><h2>Funds by control class</h2><span>contract-deduped</span></div><canvas id="controlChart" height="220"></canvas></article>
-      <article class="panel"><div class="panel-head"><h2>Funds by execution class</h2><span>row-level</span></div><canvas id="executionChart" height="220"></canvas></article>
-      <article class="panel wide"><div class="panel-head"><h2>Top protocols by exposure</h2><span>row-level aggregate</span></div><canvas id="protocolChart" height="260"></canvas></article>
-    </section>
+    <section class="cards sr-only" id="summaryCards" aria-label="Additional summary metrics"></section>
   </main>
 
   <footer><span id="generatedAt"></span> · Canonical source: Markdown report and row-level PoC folders.</footer>
