@@ -46,7 +46,7 @@ Local fork full-holder sweep: 11,812 sUSDe holders were enumerated from local re
 
 This folder is generated from the current publication data and local-fork simulation cache.
 
-Full-holder Python harness: `scripts/poc_stakedusde_v2_full_holder_sweep_anvil.py` in the source research workspace.
+Full-holder Python harness: [`scripts/poc_stakedusde_v2_full_holder_sweep_anvil.py`](../../scripts/poc_stakedusde_v2_full_holder_sweep_anvil.py).
 
 Run the holder enumeration first:
 
@@ -60,7 +60,3 @@ Then run the receipt-checked fork proof:
 anvil --silent --fork-url http://127.0.0.1:8545 --fork-block-number 25213658 --host 127.0.0.1 --port 8555
 ANVIL_RPC=http://127.0.0.1:8555 FORK_URL=http://127.0.0.1:8545 .venv/bin/python scripts/poc_stakedusde_v2_full_holder_sweep_anvil.py
 ```
-
-Foundry smoke harness (single-holder path only): [`test/publication/EthenaStakedUSDeV2PoC.t.sol`](../../test/publication/EthenaStakedUSDeV2PoC.t.sol).
-
-Run with `RETH_RPC=http://127.0.0.1:8545 forge test --match-path 'test/publication/EthenaStakedUSDeV2PoC.t.sol' -vv`.

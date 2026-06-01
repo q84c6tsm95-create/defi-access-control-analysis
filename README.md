@@ -4,29 +4,30 @@ This report analyzes Ethereum contracts with ownership or privileged-control pat
 
 Row-level evidence folders are published in [`poc/`](./poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
 
-## Interactive explorer
-
-A static GitHub Pages dashboard is available under [`docs/`](./docs/) for charted exploration, dynamic filtering, and direct row-level PoC links. The canonical report remains [`weak-access-control-report.md`](./weak-access-control-report.md).
-
-
 Publication-scope funds at risk: **$15.05B** across **153** locally verified authority rows / **148** contracts.
 
 This is a contract-deduplicated total: if the same contract appears in multiple authority rows, its value is counted once in the headline and control-class summary. The full table remains row-level so each distinct authority path is auditable.
 
 The no-shortcut replay verifier separately tracks the original drained-claim replay universe: **220/229** claims verified, covering **$12.79B** of **$12.80B**. That verifier total is a coverage metric for the replay universe; the table below uses current publication `money_at_risk` values for rows whose local-fork paths are verified.
 
-## Disclaimer
+## Executive summary
 
-This report is for informational and defensive security purposes only. The rows below are not asserted to be exploitable third-party vulnerabilities. They document privileged actions that the listed owner, admin, Safe, or upgrade authority can perform under the current contract design. In many systems, those powers are intentional governance, recovery, upgrade, or operations mechanisms. The risk model is authority compromise or misuse: if the controlling key set were compromised, coerced, or used maliciously, the documented path shows how funds or trust roots could be affected.
+- **Publication set:** 153 row-level authority paths affecting 148 unique contracts, each backed by a local-fork evidence folder and included only after the reviewed value-moving path was classified as drained/verified.
+- **Economic exposure:** $15.05B in contract-deduplicated funds at risk. Duplicate authority rows for the same contract are kept for auditability, but the headline total counts each contract once.
+- **Control concentration:** $381.5M across 39 contracts is controlled by EOAs or low-threshold 2-of-n Safes in this publication set.
+- **Execution timing:** Atomic: 110, Delayed: 3, Multi-tx: 40. `Atomic` means the reviewed path can complete in one transaction; `Multi-tx` and `Delayed` require multiple transactions, protocol message delivery, or waiting periods.
+- **Largest protocol groups by deduped exposure:** USDT0 - OFT ($3.54B, 1 contract); Ethena - OFT ($2.43B, 2 contracts); Polygon ($2.00B, 1 contract).
 
-## Snapshot metadata
+## How to read this report
 
-- Report generated: `2026-05-31T15:34:36Z`
-- Scored publication data: `data/scored.jsonl` mtime `2026-05-31T08:32:09Z`
-- Local-fork verification cache: `data/noshortcut_fork_verification.json` mtime `2026-05-29T16:27:36Z`
-- Simulation/review cache: `data/tenderly_sims.json` mtime `2026-05-31T11:46:23Z`
-- Local-fork verification block: `25191105`
-- Balance and price-derived `money_at_risk` values are a point-in-time snapshot from the local publication data, not a live TVL feed.
+- The table is intentionally row-level: one contract can appear more than once when distinct roles or authority holders can reach the same funds through different paths.
+- `Money at risk` is the publication snapshot value for that row's contract. The headline and control-class totals deduplicate repeated contracts.
+- `Control` summarizes the authority holder, such as `EOA`, `3/5`, or another scheme. `Nested Safe` notes whether a Safe owner is itself another Safe.
+- `Function path` is the minimal reviewed authority path. It is evidence of what the listed authority can do; it is not a claim that an external attacker can call those functions unauthenticated.
+
+## Disclosure and publication status
+
+This draft records technical evidence and exposure classification. It does not yet include per-protocol notification status, acknowledgements, remediation status, or embargo decisions. Treat it as a security-review/publication draft until those disclosure fields are completed or an explicit redaction decision is made for the row-level function paths.
 
 ## Methodology
 
@@ -42,13 +43,6 @@ This report is for informational and defensive security purposes only. The rows 
 - Protocol labels were refreshed against public labels and verified-source evidence where available; unlabeled or generic names should be treated as best-effort attribution.
 - EOA classification is based on on-chain bytecode absence. The sweep cannot determine whether an EOA is operated by a single signer, hardware wallet, or off-chain MPC custody setup.
 - Candidate coverage is based on the tracked authority patterns listed above; contracts using custom ownership, bespoke role systems, unindexed factory metadata, or authority hidden behind non-standard storage/events may be missing from this draft.
-
-## Recommended mitigations
-
-- Move EOAs and low-threshold Safes behind higher-threshold multisigs with independent signers, hardware-backed keys, and monitored transaction simulation before execution.
-- Put upgrade, bridge-router, peer/DVN, and emergency-withdraw authorities behind explicit timelocks where operationally possible, especially for paths marked `Multi-tx` or `Delayed`.
-- Add protocol-level circuit breakers: pause/recovery roles independent from upgrade roles, per-asset rate limits, withdrawal caps, and alerting on privileged configuration changes.
-- For cross-chain systems, require multi-party validation of endpoint/peer/DVN changes and monitor for authority-controlled trust-root changes before accepting high-value messages.
 
 ## Funds at risk by control class
 

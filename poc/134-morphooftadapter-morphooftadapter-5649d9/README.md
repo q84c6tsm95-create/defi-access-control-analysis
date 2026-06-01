@@ -31,7 +31,3 @@ Local-fork execution evidence is present for this publication row.
 ## Reproduction Status
 
 This folder is generated from the current publication data and local-fork simulation cache.
-
-Foundry smoke harness (single-holder path only): [`test/publication/LayerZeroOFTSafeDVNPoC.t.sol`](../../test/publication/LayerZeroOFTSafeDVNPoC.t.sol).
-
-Run with `RETH_RPC=http://127.0.0.1:8545 forge test --match-path 'test/publication/LayerZeroOFTSafeDVNPoC.t.sol' -vv`.
