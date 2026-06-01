@@ -10,25 +10,6 @@ This is a contract-deduplicated total: if the same contract appears in multiple 
 
 The no-shortcut replay verifier separately tracks the original drained-claim replay universe: **220/229** claims verified, covering **$12.79B** of **$12.80B**. That verifier total is a coverage metric for the replay universe; the table below uses current publication `money_at_risk` values for rows whose local-fork paths are verified.
 
-## Executive summary
-
-- **Publication set:** 153 row-level authority paths affecting 148 unique contracts, each backed by a local-fork evidence folder and included only after the reviewed value-moving path was classified as drained/verified.
-- **Economic exposure:** $15.05B in contract-deduplicated funds at risk. Duplicate authority rows for the same contract are kept for auditability, but the headline total counts each contract once.
-- **Control concentration:** $381.5M across 39 contracts is controlled by EOAs or low-threshold 2-of-n Safes in this publication set.
-- **Execution timing:** Atomic: 110, Delayed: 3, Multi-tx: 40. `Atomic` means the reviewed path can complete in one transaction; `Multi-tx` and `Delayed` require multiple transactions, protocol message delivery, or waiting periods.
-- **Largest protocol groups by deduped exposure:** USDT0 - OFT ($3.54B, 1 contract); Ethena - OFT ($2.43B, 2 contracts); Polygon ($2.00B, 1 contract).
-
-## How to read this report
-
-- The table is intentionally row-level: one contract can appear more than once when distinct roles or authority holders can reach the same funds through different paths.
-- `Money at risk` is the publication snapshot value for that row's contract. The headline and control-class totals deduplicate repeated contracts.
-- `Control` summarizes the authority holder, such as `EOA`, `3/5`, or another scheme. `Nested Safe` notes whether a Safe owner is itself another Safe.
-- `Function path` is the minimal reviewed authority path. It is evidence of what the listed authority can do; it is not a claim that an external attacker can call those functions unauthenticated.
-
-## Disclosure and publication status
-
-This draft records technical evidence and exposure classification. It does not yet include per-protocol notification status, acknowledgements, remediation status, or embargo decisions. Treat it as a security-review/publication draft until those disclosure fields are completed or an explicit redaction decision is made for the row-level function paths.
-
 ## Methodology
 
 - Starting universe: `bigquery-public-data.crypto_ethereum.contracts` contained **99,515,714** unique Ethereum contract addresses across **100,028,511** creation records when checked for this draft.
