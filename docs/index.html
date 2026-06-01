@@ -7,45 +7,37 @@
   <meta name="description" content="Interactive explorer for the Ethereum access-control authority-risk report." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css" />
 </head>
 <body>
-  <div class="orb orb-one"></div><div class="orb orb-two"></div>
-  <header class="hero">
+  <header class="site-header">
     <nav class="topbar">
-      <div class="brand"><span class="brand-mark">AC</span><span>Access Control Risk Explorer</span></div>
-      <div class="navlinks"><a href="../weak-access-control-report.md">Markdown report</a><a href="../poc/">PoC evidence</a><a href="https://github.com/q84c6tsm95-create/access-control-analysis">GitHub</a></div>
+      <a class="brand" href="./">Access Control Risk Explorer</a>
+      <div class="navlinks">
+        <a href="../weak-access-control-report.md">Report</a>
+        <a href="../poc/">PoCs</a>
+        <a href="https://github.com/q84c6tsm95-create/access-control-analysis">GitHub</a>
+      </div>
     </nav>
-    <section class="hero-grid">
+
+    <section class="intro panel">
       <div>
         <p class="eyebrow">Ethereum authority-risk research</p>
-        <h1>Privileged-control exposure, made explorable.</h1>
-        <p class="lede">Filter row-level local-fork evidence by protocol, control class, execution path, activity, nested Safe status, and funds at risk. This page is a static GitHub Pages view over the published Markdown report and PoC folders.</p>
-        <div class="hero-actions"><a class="button primary" href="../weak-access-control-report.md">Read canonical report</a><a class="button ghost" href="../poc/">Browse PoCs</a></div>
+        <h1>Privileged-control exposure explorer</h1>
+        <p class="lede">A filterable view of the published Markdown report and row-level PoC evidence.</p>
       </div>
-      <aside class="hero-card">
-        <div class="risk-label">Publication-scope funds at risk</div>
-        <div class="risk-number" id="headlineFunds">—</div>
-        <div class="mini-grid">
-          <div><span id="rowCount">—</span><small>verified authority rows</small></div>
-          <div><span id="contractCount">—</span><small>contracts</small></div>
-          <div><span id="blockNumber">—</span><small>fork block</small></div>
-        </div>
-      </aside>
+      <div class="stats" aria-label="Report summary">
+        <div><strong id="headlineFunds">—</strong><span>funds at risk</span></div>
+        <div><strong id="rowCount">—</strong><span>rows</span></div>
+        <div><strong id="contractCount">—</strong><span>contracts</span></div>
+        <div><strong id="blockNumber">—</strong><span>fork block</span></div>
+      </div>
     </section>
   </header>
 
   <main>
-    <section class="notice"><strong>Important framing:</strong> <span id="disclaimerText"></span> The risk model is compromise, coercion, governance capture, or misuse of an already-privileged authority.</section>
-
-    <section class="cards" id="summaryCards"></section>
-
-    <section class="dashboard-grid">
-      <article class="panel"><div class="panel-head"><h2>Funds by control class</h2><span>contract-deduped report summary</span></div><canvas id="controlChart" height="260"></canvas></article>
-      <article class="panel"><div class="panel-head"><h2>Funds by execution class</h2><span>row-level grouping</span></div><canvas id="executionChart" height="260"></canvas></article>
-      <article class="panel wide"><div class="panel-head"><h2>Top protocols by exposure</h2><span>row-level dashboard aggregate</span></div><canvas id="protocolChart" height="280"></canvas></article>
-    </section>
+    <section class="notice"><strong>Framing:</strong> <span id="disclaimerText"></span> Risk model: compromise, coercion, governance capture, or misuse of an already-privileged authority.</section>
 
     <section class="filters panel">
       <div class="panel-head"><h2>Explore authority rows</h2><span id="resultCount">—</span></div>
@@ -63,9 +55,17 @@
     <section class="table-panel panel">
       <div class="table-wrap"><table><thead><tr><th>#</th><th>Protocol / contract</th><th>Funds</th><th>Control</th><th>Execution</th><th>Nested</th><th>Avg tx/wk</th><th>Evidence</th></tr></thead><tbody id="rowsBody"></tbody></table></div>
     </section>
+
+    <section class="cards" id="summaryCards" aria-label="Additional summary metrics"></section>
+
+    <section class="dashboard-grid" aria-label="Charts">
+      <article class="panel"><div class="panel-head"><h2>Funds by control class</h2><span>contract-deduped</span></div><canvas id="controlChart" height="220"></canvas></article>
+      <article class="panel"><div class="panel-head"><h2>Funds by execution class</h2><span>row-level</span></div><canvas id="executionChart" height="220"></canvas></article>
+      <article class="panel wide"><div class="panel-head"><h2>Top protocols by exposure</h2><span>row-level aggregate</span></div><canvas id="protocolChart" height="260"></canvas></article>
+    </section>
   </main>
 
-  <footer><span id="generatedAt"></span> · Static dashboard generated from the publication report. Canonical source remains the Markdown report and row-level PoC folders.</footer>
+  <footer><span id="generatedAt"></span> · Canonical source: Markdown report and row-level PoC folders.</footer>
   <script src="./app.js"></script>
 </body>
 </html>
