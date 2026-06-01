@@ -5,7 +5,7 @@
 - Protocol: `EtherFi - OFT`
 - Contract name: `EtherfiOFTAdapterUpgradeable`
 - Contract: [0xcd2eb13d6831d4602d80e5db9230a57596cdca63](https://etherscan.io/address/0xcd2eb13d6831d4602d80e5db9230a57596cdca63)
-- Role: `OWNER`
+- Role: `DEFAULT_ADMIN_ROLE`
 - Authority holder: [0x2aca71020de61bb532008049e1bd41e451ae8adc](https://etherscan.io/address/0x2aca71020de61bb532008049e1bd41e451ae8adc)
 - Control class: `4/7`
 - Nested Safe: `❌`
