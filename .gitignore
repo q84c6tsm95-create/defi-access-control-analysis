@@ -4,6 +4,7 @@
 !foundry.toml
 !poc/
 !poc/**
-!docs/
-!docs/index.html
+!test/
+!test/publication/
+!test/publication/**
 !.gitignore

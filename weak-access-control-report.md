@@ -2,13 +2,9 @@
 
 This report analyzes Ethereum contracts with ownership or privileged-control patterns where the controlling address is an EOA or Gnosis Safe. Compromise of the listed holder could lead to loss of funds.
 
-Row-level evidence folders are published in [`poc/`](./poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
+Row-level evidence folders are published in [`poc/`](../poc/) with the authority holder, function path, local-fork evidence summary, and executed steps for each table row.
 
-Publication-scope funds at risk: **$11.94B** across **135** locally verified authority rows / **131** contracts.
-
-This is a contract-deduplicated total: if the same contract appears in multiple authority rows, its value is counted once in the headline and control-class summary. The full table remains row-level so each distinct authority path is auditable.
-
-The no-shortcut replay verifier separately tracks the original drained-claim replay universe: **220/229** claims verified, covering **$12.79B** of **$12.80B**. That verifier total is a coverage metric for the replay universe; the table below uses current publication `money_at_risk` values for rows whose local-fork paths are verified.
+Publication-scope funds at risk: **$11.93B** across **133** locally verified authority rows / **129** contracts.
 
 ## Methodology
 
@@ -31,14 +27,11 @@ The no-shortcut replay verifier separately tracks the original drained-claim rep
 |---|---:|---:|
 | EOA | 20 | $269.1M |
 | Safe 1/n | 2 | $2.0M |
-| Safe 2/n | 27 | $198.2M |
+| Safe 2/n | 27 | $194.1M |
 | Safe 3/n | 40 | $4.33B |
 | Safe 4/n | 23 | $433.7M |
 | Safe 5/n | 17 | $6.69B |
-| Other scheme | 2 | $8.3M |
-| **Total** | **131** | **$11.94B** |
-
-Avg. txs/week is each holder's lifetime on-chain cadence (Safe nonce or EOA tx count over weeks since first transaction), measured against the local node. Across all 135 rows the median holder activity is **0.55** transactions/week.
+| **Total** | **129** | **$11.93B** |
 
 ## Full authority table
 
@@ -90,7 +83,6 @@ Avg. txs/week is each holder's lifetime on-chain cadence (Safe nonce or EOA tx c
 | Veda | BoringVault | $8.8M | [0xdddd...6f3f](https://etherscan.io/address/0xdddd73f5df1f0dc31373357beac77545dc5a6f3f) | `OWNER` | [0xa08a...a982](https://etherscan.io/address/0xa08a0dc480bd60d1d56c8eec6c722125eafea982) | 3/5 | ❌ | 3.26 | Atomic | <code>manage</code><br>→ <code>transfer</code> |
 | Ondo | BuidlUSDCSource | $8.5M | [0x9f20...b722](https://etherscan.io/address/0x9f205e1ac7698f59edbaa0a28c4a4c4ed605b722) | `DEFAULT_ADMIN_ROLE` | [0x5ae2...78ef](https://etherscan.io/address/0x5ae21c99fc5f1584d8cb09a298cffd92b5d178ef) | 3/5 | ❌ | 1.91 | Multi-tx | <code>grantRole</code><br>→ <code>withdrawToken</code> |
 | Ethena | EthenaLPStaking | $8.2M | [0x8707...c512](https://etherscan.io/address/0x8707f238936c12c309bfc2b9959c35828acfc512) | `OWNER` | [0x3b0a...1862](https://etherscan.io/address/0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862) | 5/10 | ❌ | 4.39 | Atomic | <code>rescueTokens</code> |
-| SHARD / MarketingMining | MarketingMiningDelegate | $7.8M | [0x0fec...0dce](https://etherscan.io/address/0x0feccb11c5b61b3922c511d0f002c0b72d770dce) | `PROXY_ADMIN` | [0xaeb5...5756](https://etherscan.io/address/0xaeb5bcdb55e6abc2450595df27f993b82f375756) | Other | ❌ | 0 | Delayed | <code>Timelock.queueTransaction(_setImplementation)</code><br>→ <code>Timelock.executeTransaction(_setImplementation)</code><br>→ <code>drainEth</code><br>→ <code>drainErc20</code> |
 | Sonic Labs: Sonic Gateway | TokenDeposit | $7.7M | [0xa1e2...ec20](https://etherscan.io/address/0xa1e2481a9cd0cb0447eeb1cbc26f1b3fff3bec20) | `OWNER` | [0x9fe6...fbe0](https://etherscan.io/address/0x9fe65a5418850015a9d8ad3ca50d6a0b9769fbe0) | 3/4 | ❌ | 0.44 | Multi-tx | <code>setProofVerifier</code><br>→ <code>claimFor</code> |
 | DeBoxTokenOFTAdapter | DeBoxTokenOFTAdapter | $7.6M | [0xe3b6...4b26](https://etherscan.io/address/0xe3b60790607afe418adcaadcb5e07f8124ed4b26) | `OWNER` | [0x7393...36ac](https://etherscan.io/address/0x7393c2ed462ce04d5c923bf7e8953be7d7c736ac) | 2/3 | ❌ | 0.26 | Atomic | <code>endpoint.setConfig Safe-as-DVN</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
 | Superstate: RedemptionIdle | RedemptionIdle | $7.2M | [0x4c21...54cf](https://etherscan.io/address/0x4c21b7577c8fe8b0b0669165ee7c8f67fa1454cf) | `OWNER` | [0x8cf4...0765](https://etherscan.io/address/0x8cf40e96e7d7fd8a7a9bef70d3882fbbc4d40765) | EOA | ❌ | 7.00 | Atomic | <code>ProxyAdmin.upgradeAndCall</code><br>→ <code>drainErc20</code> |
@@ -177,5 +169,4 @@ Avg. txs/week is each holder's lifetime on-chain cadence (Safe nonce or EOA tx c
 | Metal | OptimismPortal2 | $566.8K | [0x3f37...3956](https://etherscan.io/address/0x3f37abde2c6b5b2ed6f8045787df1ed1e3753956) | `UPGRADE_AUTHORITY` | [0x5a0a...3d2a](https://etherscan.io/address/0x5a0aae59d09fccbddb6c6cceb07b7279367c3d2a) | 2/2 | ✅ (5/7, higher-quorum Safe) | 0.29 | Atomic | <code>ProxyAdmin.upgrade</code><br>→ <code>drainEth</code><br>→ <code>drainErc20</code> |
 | WETH OFT / LayerZero | WETHOFTAdapter | $559.6K | [0x06e0...26e8](https://etherscan.io/address/0x06e01cb086fea9c644a2c105a9f20cfc21a526e8) | `OWNER` | [0xd7e2...b7e2](https://etherscan.io/address/0xd7e22951de7af453aac5400d6e072e3b63beb7e2) | 4/8 | ❌ | 0.50 | Atomic | <code>endpoint.setConfig</code> → <code>oapp.setPeer</code><br>→ <code>ReceiveUln302.verify</code> → <code>ReceiveUln302.commitVerification</code><br>→ <code>endpoint.lzReceive</code> |
 | Redacted Cartel: Reward Distributor | RewardDistributor | $546.4K | [0xa9b0...6416](https://etherscan.io/address/0xa9b08b4ceec1ef29edec7f9c94583270337d6416) | `DEFAULT_ADMIN_ROLE` | [0xa52f...077e](https://etherscan.io/address/0xa52fd396891e7a74b641a2cb1a6999fcf56b077e) | 3/7 | ❌ | 9.04 | Delayed | <code>updateRewardsMetadata</code><br>→ <code>claim</code> |
-| Optimism | L1USDCGateway | $544.7K | [0x2c83...b289](https://etherscan.io/address/0x2c8314f5aada5d7a9d32eefebfc43accabe1b289) | `PROXY_ADMIN_OWNER` | [0x5426...b530](https://etherscan.io/address/0x542675e90e269f20ecbb9e0095d4751ac155b530) | Other | ❌ | 0.13 | Atomic | <code>ProxyAdmin.upgrade</code><br>→ <code>drainErc20</code> |
 | Miner | Miner | $509.2K | [0x6435...52de](https://etherscan.io/address/0x64356f9e79957fa6d84564fa75f53028799c52de) | `OWNER` | [0x2aaf...a841](https://etherscan.io/address/0x2aaf3e5a559dc5584aa1fefdc1643256c14da841) | EOA | ❌ | 0.36 | Atomic | <code>updateManger</code><br>→ <code>withdraw(ETH)</code> |
