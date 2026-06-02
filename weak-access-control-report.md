@@ -10,7 +10,7 @@ Publication-scope funds at risk: **$11.93B** across **133** locally verified aut
 
 - Starting universe: `bigquery-public-data.crypto_ethereum.contracts` contained **99,515,714** unique Ethereum contract addresses across **100,028,511** creation records when checked for this draft.
 - Authority candidates: `bigquery-public-data.crypto_ethereum.logs` was scanned for tracked ownership and access-control events, producing a local merged candidate set of **1,348,790** unique contracts.
-- Patterns covered: `Ownable / Ownable2Step`, `owner()` holders, `OpenZeppelin AccessControl` grants and admin hierarchies, `ProxyAdmin` ownership, `EIP-1967` and `Transparent proxy` admins, `UUPS` upgrade authority, `Beacon` / beacon-proxy upgrade authority, and `Solmate Owned/Auth` owner updates.
+- Patterns covered: `Ownable / Ownable2Step`, `owner()` holders, `OpenZeppelin AccessControl` grants and admin hierarchies, `ProxyAdmin` ownership, `EIP-1967` and `Transparent proxy` admins, `UUPS` upgrade authority, and `Solmate Owned/Auth` owner updates.
 - PoC evidence: every publication row has local fork execution evidence for the documented value-moving path. `Execution class` separates single-transaction paths from multi-transaction or delayed sequences.
 - Safe nesting: the `Nested Safe` column is populated from local reth `getOwners()` and `getThreshold()` calls. `✅ (n/m, n1/m1)` means one or more top-level Safe owners are themselves Safes with the listed thresholds; `❌` means no nested Safe owner was found.
 - Timing caveat: `Multi-tx` and `Delayed` rows are production-feasible authority paths, not same-block claims. Cross-chain rows require both an authority-controlled trust-root/router change and normal protocol message delivery.
